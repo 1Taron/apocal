@@ -18,6 +18,6 @@ public class AnimalMove : MonoBehaviour
 
     private void OnMouseUp()
     {
-        
+
     }
 }

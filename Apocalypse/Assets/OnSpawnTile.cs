@@ -16,24 +16,27 @@ public class OnSpawnTile : MonoBehaviour
     {
         Cannot.SetActive(false);
     }
-    public void Abc(){
+    public void Abc()
+    {
         if (battle_info.text == "Player1 Turn")
         {
             cost = cost1.text;
             cost_ = int.Parse(cost);
             cost_ = cost_ - a;
-            cost= cost_.ToString();
+            cost = cost_.ToString();
             cost1.text = cost;
-            if(cost_ >= 0){
-            GameObject.Find("AnimalCreate_pn").SetActive(false);
-            Tile.tileA();
+            if (cost_ >= 0)
+            {
+                GameObject.Find("AnimalCreate_pn").SetActive(false);
+                Tile.tileA();
             }
-            else if(cost_ < 0){
+            else if (cost_ < 0)
+            {
                 Cannot.SetActive(true);
                 cost = cost1.text;
                 cost_ = int.Parse(cost);
                 cost_ = cost_ + a;
-                cost= cost_.ToString();
+                cost = cost_.ToString();
                 cost1.text = cost;
             }
         }
@@ -42,18 +45,20 @@ public class OnSpawnTile : MonoBehaviour
             cost = cost2.text;
             cost_ = int.Parse(cost);
             cost_ = cost_ - a;
-            cost= cost_.ToString();
+            cost = cost_.ToString();
             cost2.text = cost;
-            if(cost_ >= 0){
-            GameObject.Find("AnimalCreate_pn").SetActive(false);
-            Tile.tileA2();
+            if (cost_ >= 0)
+            {
+                GameObject.Find("AnimalCreate_pn").SetActive(false);
+                Tile.tileA2();
             }
-            else if(cost_ < 0){
+            else if (cost_ < 0)
+            {
                 Cannot.SetActive(true);
                 cost = cost2.text;
                 cost_ = int.Parse(cost);
                 cost_ = cost_ + a;
-                cost= cost_.ToString();
+                cost = cost_.ToString();
                 cost2.text = cost;
             }
         }

@@ -50,23 +50,23 @@ public class CameraSize : MonoBehaviour
         LimitCameraMove();
         ArrowMoving();
     }
-     void ArrowMoving()
+    void ArrowMoving()
     {
-        if (Input.GetKey (KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.LeftArrow))
         {
-            this.transform.Translate(-0.025f,0f,0f);
+            this.transform.Translate(-0.025f, 0f, 0f);
         }
-        if (Input.GetKey (KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.RightArrow))
         {
-            this.transform.Translate(0.025f,0f,0f);
+            this.transform.Translate(0.025f, 0f, 0f);
         }
-        if (Input.GetKey (KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.UpArrow))
         {
-            this.transform.Translate(0f,0.025f,0f);
+            this.transform.Translate(0f, 0.025f, 0f);
         }
-        if (Input.GetKey (KeyCode.DownArrow))
+        if (Input.GetKey(KeyCode.DownArrow))
         {
-            this.transform.Translate(0f,-0.025f,0f);
+            this.transform.Translate(0f, -0.025f, 0f);
         }
     }
 
@@ -76,7 +76,7 @@ public class CameraSize : MonoBehaviour
         {
             if (MousePosition.x > 2000)
             {
-                
+
                 transform.position = Vector3.Lerp(transform.position, AssXT.position, Time.deltaTime * 0.035f);
                 float clampx = Mathf.Clamp(Camera.main.transform.position.x, 9, 39);
                 float clampy = Mathf.Clamp(Camera.main.transform.position.y, 5, 20);

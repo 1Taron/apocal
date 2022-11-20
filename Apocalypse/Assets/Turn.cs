@@ -39,7 +39,7 @@ public class Turn : MonoBehaviour
 
     void Update()
     {
-        
+
 
     }
     public void OnClickEndTurn()
@@ -51,21 +51,25 @@ public class Turn : MonoBehaviour
 
     private bool TurnChanged(bool turn)
     {
-        for(int x = 1; x<=41; x++){
-            for(int y = 1; y<=31; y++){
+        for (int x = 1; x <= 41; x++)
+        {
+            for (int y = 1; y <= 31; y++)
+            {
                 GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
             }
         }
-        if(battle_info.text == "Player1 Turn"){
+        if (battle_info.text == "Player1 Turn")
+        {
             FoundObjects2 = new List<GameObject>(GameObject.FindGameObjectsWithTag("Grass"));
             shortDis1 = 2.2f;
             FoundObjects1 = new List<GameObject>(GameObject.FindGameObjectsWithTag("Rabbit"));
-            
-                    
-            foreach (GameObject found1 in FoundObjects1){                   
+
+
+            foreach (GameObject found1 in FoundObjects1)
+            {
                 foreach (GameObject found2 in FoundObjects2)
                 {
-                    float Distance = Vector3.Distance(found1.transform.position, found2.transform.position); 
+                    float Distance = Vector3.Distance(found1.transform.position, found2.transform.position);
                     if (Distance < shortDis1) // 위에서 잡은 기준으로 거리 재기
                     {
                         grass = found2;
@@ -73,196 +77,194 @@ public class Turn : MonoBehaviour
                     }
                 }
                 Debug.Log(shortDis1);
-                if(shortDis1 < 2.0001){
-                cost = cost1.text;
-                cost_ = int.Parse(cost);
-                cost_ = cost_ + 1;
-                cost= cost_.ToString();
-                cost1.text = cost;
-                Destroy(grass);
-                
-                }   
+                if (shortDis1 < 2.0001)
+                {
+                    cost = cost1.text;
+                    cost_ = int.Parse(cost);
+                    cost_ = cost_ + 1;
+                    cost = cost_.ToString();
+                    cost1.text = cost;
+                    Destroy(grass);
+
+                }
             }
-            
-            
-                
-                
-            
+
+
+
+
+
             shortDis1 = 2.2f;
-            FoundObjects3 = new List<GameObject>(GameObject.FindGameObjectsWithTag("Gazelle"));            
-            foreach (GameObject found1 in FoundObjects3){                   
+            FoundObjects3 = new List<GameObject>(GameObject.FindGameObjectsWithTag("Gazelle"));
+            foreach (GameObject found1 in FoundObjects3)
+            {
                 foreach (GameObject found2 in FoundObjects2)
                 {
-                    float Distance = Vector3.Distance(found1.transform.position, found2.transform.position); 
+                    float Distance = Vector3.Distance(found1.transform.position, found2.transform.position);
                     if (Distance < shortDis1) // 위에서 잡은 기준으로 거리 재기
                     {
                         grass = found2;
                         shortDis1 = Distance;
                     }
                 }
-                if(shortDis1 < 2.01){
-                Destroy(grass);
-                cost = cost1.text;
-                cost_ = int.Parse(cost);
-                cost_ = cost_ + 2;
-                cost= cost_.ToString();
-                cost1.text = cost;
+                if (shortDis1 < 2.01)
+                {
+                    Destroy(grass);
+                    cost = cost1.text;
+                    cost_ = int.Parse(cost);
+                    cost_ = cost_ + 2;
+                    cost = cost_.ToString();
+                    cost1.text = cost;
                 }
             }
             shortDis1 = 2.2f;
-            FoundObjects4 = new List<GameObject>(GameObject.FindGameObjectsWithTag("Rhino"));            
-            foreach (GameObject found1 in FoundObjects4){                   
+            FoundObjects4 = new List<GameObject>(GameObject.FindGameObjectsWithTag("Rhino"));
+            foreach (GameObject found1 in FoundObjects4)
+            {
                 foreach (GameObject found2 in FoundObjects2)
                 {
-                    float Distance = Vector3.Distance(found1.transform.position, found2.transform.position); 
+                    float Distance = Vector3.Distance(found1.transform.position, found2.transform.position);
                     if (Distance < shortDis1) // 위에서 잡은 기준으로 거리 재기
                     {
                         grass = found2;
                         shortDis1 = Distance;
                     }
                 }
-                if(shortDis1 < 2.01){
-                Destroy(grass);
-                cost = cost1.text;
-                cost_ = int.Parse(cost);
-                cost_ = cost_ + 1;
-                cost= cost_.ToString();
-                cost1.text = cost;
+                if (shortDis1 < 2.01)
+                {
+                    Destroy(grass);
+                    cost = cost1.text;
+                    cost_ = int.Parse(cost);
+                    cost_ = cost_ + 1;
+                    cost = cost_.ToString();
+                    cost1.text = cost;
                 }
             }
             shortDis1 = 2.2f;
-            FoundObjects5 = new List<GameObject>(GameObject.FindGameObjectsWithTag("Giaffe"));            
-            foreach (GameObject found1 in FoundObjects5){                   
+            FoundObjects5 = new List<GameObject>(GameObject.FindGameObjectsWithTag("Giaffe"));
+            foreach (GameObject found1 in FoundObjects5)
+            {
                 foreach (GameObject found2 in FoundObjects2)
                 {
-                    float Distance = Vector3.Distance(found1.transform.position, found2.transform.position); 
+                    float Distance = Vector3.Distance(found1.transform.position, found2.transform.position);
                     if (Distance < shortDis1) // 위에서 잡은 기준으로 거리 재기
                     {
                         grass = found2;
                         shortDis1 = Distance;
                     }
                 }
-                if(shortDis1 < 2.01){
-                Destroy(grass);
-                cost = cost1.text;
-                cost_ = int.Parse(cost);
-                cost_ = cost_ + 1;
-                cost= cost_.ToString();
-                cost1.text = cost;
+                if (shortDis1 < 2.01)
+                {
+                    Destroy(grass);
+                    cost = cost1.text;
+                    cost_ = int.Parse(cost);
+                    cost_ = cost_ + 1;
+                    cost = cost_.ToString();
+                    cost1.text = cost;
                 }
             }
             shortDis1 = 2.2f;
-            FoundObjects6 = new List<GameObject>(GameObject.FindGameObjectsWithTag("Hippo"));            
-            foreach (GameObject found1 in FoundObjects6){                   
+            FoundObjects6 = new List<GameObject>(GameObject.FindGameObjectsWithTag("Hippo"));
+            foreach (GameObject found1 in FoundObjects6)
+            {
                 foreach (GameObject found2 in FoundObjects2)
                 {
-                    float Distance = Vector3.Distance(found1.transform.position, found2.transform.position); 
+                    float Distance = Vector3.Distance(found1.transform.position, found2.transform.position);
                     if (Distance < shortDis1) // 위에서 잡은 기준으로 거리 재기
                     {
                         grass = found2;
                         shortDis1 = Distance;
                     }
                 }
-                if(shortDis1 < 2.01){
-                Destroy(grass);
-                cost = cost1.text;
-                cost_ = int.Parse(cost);
-                cost_ = cost_ + 1;
-                cost= cost_.ToString();
-                cost1.text = cost;
+                if (shortDis1 < 2.01)
+                {
+                    Destroy(grass);
+                    cost = cost1.text;
+                    cost_ = int.Parse(cost);
+                    cost_ = cost_ + 1;
+                    cost = cost_.ToString();
+                    cost1.text = cost;
                 }
-            }    
+            }
         }
-        if(battle_info.text == "Player2 Turn"){
+        if (battle_info.text == "Player2 Turn")
+        {
             FoundObjects2 = new List<GameObject>(GameObject.FindGameObjectsWithTag("Grass"));
             shortDis1 = 2.2f;
-            FoundObjects1 = new List<GameObject>(GameObject.FindGameObjectsWithTag("Rabbit2"));            
-            foreach (GameObject found1 in FoundObjects1){                   
+            FoundObjects1 = new List<GameObject>(GameObject.FindGameObjectsWithTag("Rabbit2"));
+            foreach (GameObject found1 in FoundObjects1)
+            {
                 foreach (GameObject found2 in FoundObjects2)
                 {
-                    float Distance = Vector3.Distance(found1.transform.position, found2.transform.position); 
+                    float Distance = Vector3.Distance(found1.transform.position, found2.transform.position);
                     if (Distance < shortDis1) // 위에서 잡은 기준으로 거리 재기
                     {
                         grass = found2;
                         shortDis1 = Distance;
                     }
                 }
-                if(shortDis1 < 2.01){
-                Destroy(grass);
-                cost = cost2.text;
-                cost_ = int.Parse(cost);
-                cost_ = cost_ + 1;
-                cost= cost_.ToString();
-                cost2.text = cost;
+                if (shortDis1 < 2.01)
+                {
+                    Destroy(grass);
+                    cost = cost2.text;
+                    cost_ = int.Parse(cost);
+                    cost_ = cost_ + 1;
+                    cost = cost_.ToString();
+                    cost2.text = cost;
                 }
             }
             shortDis1 = 2.2f;
-            FoundObjects3 = new List<GameObject>(GameObject.FindGameObjectsWithTag("Gazelle2"));            
-            foreach (GameObject found1 in FoundObjects3){                   
+            FoundObjects3 = new List<GameObject>(GameObject.FindGameObjectsWithTag("Gazelle2"));
+            foreach (GameObject found1 in FoundObjects3)
+            {
                 foreach (GameObject found2 in FoundObjects2)
                 {
-                    float Distance = Vector3.Distance(found1.transform.position, found2.transform.position); 
+                    float Distance = Vector3.Distance(found1.transform.position, found2.transform.position);
                     if (Distance < shortDis1) // 위에서 잡은 기준으로 거리 재기
                     {
                         grass = found2;
                         shortDis1 = Distance;
                     }
                 }
-                if(shortDis1 < 2.01){
-                Destroy(grass);
-                cost = cost2.text;
-                cost_ = int.Parse(cost);
-                cost_ = cost_ + 2;
-                cost= cost_.ToString();
-                cost2.text = cost;
+                if (shortDis1 < 2.01)
+                {
+                    Destroy(grass);
+                    cost = cost2.text;
+                    cost_ = int.Parse(cost);
+                    cost_ = cost_ + 2;
+                    cost = cost_.ToString();
+                    cost2.text = cost;
                 }
             }
             shortDis1 = 2.2f;
-            FoundObjects4 = new List<GameObject>(GameObject.FindGameObjectsWithTag("Rhino2"));            
-            foreach (GameObject found1 in FoundObjects4){                   
+            FoundObjects4 = new List<GameObject>(GameObject.FindGameObjectsWithTag("Rhino2"));
+            foreach (GameObject found1 in FoundObjects4)
+            {
                 foreach (GameObject found2 in FoundObjects2)
                 {
-                    float Distance = Vector3.Distance(found1.transform.position, found2.transform.position); 
+                    float Distance = Vector3.Distance(found1.transform.position, found2.transform.position);
                     if (Distance < shortDis1) // 위에서 잡은 기준으로 거리 재기
                     {
                         grass = found2;
                         shortDis1 = Distance;
                     }
                 }
-                if(shortDis1 < 2.01){
-                Destroy(grass);
-                cost = cost2.text;
-                cost_ = int.Parse(cost);
-                cost_ = cost_ + 1;
-                cost= cost_.ToString();
-                cost2.text = cost;
+                if (shortDis1 < 2.01)
+                {
+                    Destroy(grass);
+                    cost = cost2.text;
+                    cost_ = int.Parse(cost);
+                    cost_ = cost_ + 1;
+                    cost = cost_.ToString();
+                    cost2.text = cost;
                 }
             }
             shortDis1 = 2.2f;
-            FoundObjects5 = new List<GameObject>(GameObject.FindGameObjectsWithTag("Giaffe2"));            
-            foreach (GameObject found1 in FoundObjects5){                   
+            FoundObjects5 = new List<GameObject>(GameObject.FindGameObjectsWithTag("Giaffe2"));
+            foreach (GameObject found1 in FoundObjects5)
+            {
                 foreach (GameObject found2 in FoundObjects2)
                 {
-                    float Distance = Vector3.Distance(found1.transform.position, found2.transform.position); 
-                    if (Distance < shortDis1) // 위에서 잡은 기준으로 거리 재기
-                    {
-                        grass = found2;
-                        shortDis1 = Distance;
-                    }
-                }
-                Destroy(grass);
-                cost = cost2.text;
-                cost_ = int.Parse(cost);
-                cost_ = cost_ + 1;
-                cost= cost_.ToString();
-                cost2.text = cost;
-            }
-            shortDis1 = 2.2f;
-            FoundObjects6 = new List<GameObject>(GameObject.FindGameObjectsWithTag("Hippo2"));            
-            foreach (GameObject found1 in FoundObjects6){                   
-                foreach (GameObject found2 in FoundObjects2)
-                {
-                    float Distance = Vector3.Distance(found1.transform.position, found2.transform.position); 
+                    float Distance = Vector3.Distance(found1.transform.position, found2.transform.position);
                     if (Distance < shortDis1) // 위에서 잡은 기준으로 거리 재기
                     {
                         grass = found2;
@@ -273,12 +275,32 @@ public class Turn : MonoBehaviour
                 cost = cost2.text;
                 cost_ = int.Parse(cost);
                 cost_ = cost_ + 1;
-                cost= cost_.ToString();
+                cost = cost_.ToString();
                 cost2.text = cost;
-            }    
-        }    
-            
-        
+            }
+            shortDis1 = 2.2f;
+            FoundObjects6 = new List<GameObject>(GameObject.FindGameObjectsWithTag("Hippo2"));
+            foreach (GameObject found1 in FoundObjects6)
+            {
+                foreach (GameObject found2 in FoundObjects2)
+                {
+                    float Distance = Vector3.Distance(found1.transform.position, found2.transform.position);
+                    if (Distance < shortDis1) // 위에서 잡은 기준으로 거리 재기
+                    {
+                        grass = found2;
+                        shortDis1 = Distance;
+                    }
+                }
+                Destroy(grass);
+                cost = cost2.text;
+                cost_ = int.Parse(cost);
+                cost_ = cost_ + 1;
+                cost = cost_.ToString();
+                cost2.text = cost;
+            }
+        }
+
+
         turn = !turn;
         player1_turn = turn;
         Info();

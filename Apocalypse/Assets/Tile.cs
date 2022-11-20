@@ -9,14 +9,14 @@ public class Tile : MonoBehaviour
     [SerializeField] private SpriteRenderer _renderer;
     [SerializeField] private GameObject _highlight, _spawnable;
 
-    public static Action tileA; 
+    public static Action tileA;
     public static Action tileB;
     public static Action tileA2;
 
     private void Awake()
     {
-        tileA = () => { ChangeSpawnColor(); }; 
-        tileB = () => { ChangeBaseColor(); }; 
+        tileA = () => { ChangeSpawnColor(); };
+        tileB = () => { ChangeBaseColor(); };
         tileA2 = () => { ChangeSpawnColorPlayer2(); };
     }
 
@@ -89,5 +89,5 @@ public class Tile : MonoBehaviour
         }
     }
 
-    
+
 }

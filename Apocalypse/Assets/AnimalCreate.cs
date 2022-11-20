@@ -43,7 +43,7 @@ public class AnimalCreate : MonoBehaviour
                 strtile = hit.collider.gameObject.name;
                 switch (strtile)
                 {
-                    case "Tile 41 1" :
+                    case "Tile 41 1":
                         CreateAnimal_();
                         break;
                     case "Tile 41 2":
@@ -124,10 +124,10 @@ public class AnimalCreate : MonoBehaviour
                 }
             }
         }
-    
-}
-  
-   void ElephantCreate()
+
+    }
+
+    void ElephantCreate()
     {
         Instantiate(Animal12, new Vector3(33.725f, 4.92f, -2), Quaternion.identity);
     }
@@ -201,61 +201,61 @@ public class AnimalCreate : MonoBehaviour
             _GiraffeCreate(); Tile.tileB(); AnimalSpawnManager.tileD();
         }
     }
-   
+
     void _RabbitCreate()
     {
-        
+
         Instantiate(Animal01, new Vector3(xpos, ypos, -2), Quaternion.identity);
     }
 
     void _GazelleCreate()
     {
-        
+
         Instantiate(Animal02, new Vector3(xpos, ypos, -2), Quaternion.identity);
     }
     void _HyenaCreate()
     {
-        
+
         Instantiate(Animal03, new Vector3(xpos, ypos, -2), Quaternion.identity);
     }
     void _CrocoCreate()
     {
-        
+
         Instantiate(Animal04, new Vector3(xpos, ypos, -2), Quaternion.identity);
     }
     void _CheetahCreate()
     {
-        
+
         Instantiate(Animal05, new Vector3(xpos, ypos, -2), Quaternion.identity);
     }
     void _HippoCreate()
     {
-        
+
         Instantiate(Animal06, new Vector3(xpos, ypos, -2), Quaternion.identity);
     }
     void _RhinoCreate()
     {
-        
+
         Instantiate(Animal07, new Vector3(xpos, ypos, -2), Quaternion.identity);
     }
     void _SnakeCreate()
     {
-        
+
         Instantiate(Animal08, new Vector3(xpos, ypos, -2), Quaternion.identity);
     }
     void _LionCreate()
     {
-        
+
         Instantiate(Animal09, new Vector3(xpos, ypos, -2), Quaternion.identity);
     }
     void _EagleCreate()
     {
-        
+
         Instantiate(Animal10, new Vector3(xpos, ypos, -2), Quaternion.identity);
     }
     void _GiraffeCreate()
     {
-        
+
         Instantiate(Animal11, new Vector3(xpos, ypos, -2), Quaternion.identity);
     }
 }

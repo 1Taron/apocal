@@ -29,26 +29,26 @@ public class GridManager : MonoBehaviour
     void GenerateGrid()
     {
         _tiles = new Dictionary<Vector2, Tile>();
-        for(float x = 0; x < _width; x++)   //0~41
+        for (float x = 0; x < _width; x++)   //0~41
         {
-            for(float y = 0; y < _height; y++)  //0~31
+            for (float y = 0; y < _height; y++)  //0~31
             {
                 if (x > 0)  //1~41
                 {
-                    if(y > 0)   //1~31
+                    if (y > 0)   //1~31
                     {
-                        if(y % 2 == 0)  //2째 줄마다
+                        if (y % 2 == 0)  //2째 줄마다
                         {
                             float ypos = y - 0.18f * y;
                             float xpos = (x - 0.05f * x) + 0.475f;
 
                             var spawnedTile = Instantiate(_tilePrefab, new Vector3(xpos, ypos), Quaternion.identity);
                             spawnedTile.name = $"Tile {x} {y}";
-                            
+
                             var _colorValue = 2;
-                            if(_colorValue == 2)
+                            if (_colorValue == 2)
                             {
-                                var spawnedGrass = Instantiate(_grassPrefab, new Vector3(xpos, ypos+0.06f), Quaternion.identity);
+                                var spawnedGrass = Instantiate(_grassPrefab, new Vector3(xpos, ypos + 0.06f), Quaternion.identity);
                                 spawnedGrass.name = $"Grass {x} {y}";
                             }
                             switch (y)
@@ -569,7 +569,7 @@ public class GridManager : MonoBehaviour
         }
 
         SpawnGrass();
-                _cam.transform.position = new Vector3((float)_width / 2 - 0.5f, (float)_height / 2 - 0.5f - 1.0f, -10);
+        _cam.transform.position = new Vector3((float)_width / 2 - 0.5f, (float)_height / 2 - 0.5f - 1.0f, -10);
 
     }
 
@@ -596,7 +596,7 @@ public class GridManager : MonoBehaviour
 
     public Tile GetTileAtPosition(Vector2 pos)
     {
-        if(_tiles.TryGetValue(pos,out var tile))
+        if (_tiles.TryGetValue(pos, out var tile))
         {
             return tile;
         }

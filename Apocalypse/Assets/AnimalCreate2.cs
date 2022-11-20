@@ -7,8 +7,8 @@ using System;
 public class AnimalCreate2 : MonoBehaviour
 {
     public GameObject Animal01; public GameObject Animal02; public GameObject Animal03;
-    public GameObject Animal04; public GameObject Animal05;public GameObject Animal06;public GameObject Animal07;
-    public GameObject Animal08; public GameObject Animal09;public GameObject Animal10;public GameObject Animal11;
+    public GameObject Animal04; public GameObject Animal05; public GameObject Animal06; public GameObject Animal07;
+    public GameObject Animal08; public GameObject Animal09; public GameObject Animal10; public GameObject Animal11;
     public GameObject Animal12;
     public Camera C;
 
