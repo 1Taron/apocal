@@ -5836,7 +5836,7 @@ public class MouseV: MonoBehaviour {
                                             GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
                                         }
                                     }
-                                    Destroy(hit.collider.gameObject);
+                                    Destroy(clone);
 
                                      if( curHp2 > 0)
                                     {
@@ -6006,7 +6006,7 @@ public class MouseV: MonoBehaviour {
                                 }
                                 cost_ = cost_2.ToString();
                                 Player1_MoveCost.text = cost_;
-                            } else if (clone.name == "Gazelle(Clone)") {
+                            } else if (clone.name == "Gazelle(Clone)" || clone.name == "Elephant(Clone)") {
                                 cost_ = Player1_MoveCost.text;
                                 cost_2 = int.Parse(cost_);
                                 cost_2 = cost_2 - 1;
@@ -6065,7 +6065,7 @@ public class MouseV: MonoBehaviour {
                             }
 
                         } else if (battle_info.text == "Player2 Turn") {
-                            if (clone.name == "Rabbit2(Clone)" || clone.name == "Hippo2(Clone)" || clone.name == "Rhino2(Clone)" || clone.name == "Giaffe2(Clone)") {
+                            if (clone.name == "Rabbit2(Clone)" || clone.name == "Hippo2(Clone)" || clone.name == "Rhino2(Clone)" || clone.name == "Giaffe2(Clone)" || clone.name == "Elephant2(Clone)") {
                                 if (GameObject.Find(tile.name).transform.Find("movehighlight").gameObject.activeSelf == true) {
                                     cost_ = Player2_MoveCost.text;
                                     cost_2 = int.Parse(cost_);

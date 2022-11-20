@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class Turn : MonoBehaviour
 {
     public bool player1_turn;
@@ -24,7 +25,7 @@ public class Turn : MonoBehaviour
     int a;
     int cost_;
     string cost;
-    string gr;
+
 
     void Start()
     {
@@ -58,7 +59,9 @@ public class Turn : MonoBehaviour
         if(battle_info.text == "Player1 Turn"){
             FoundObjects2 = new List<GameObject>(GameObject.FindGameObjectsWithTag("Grass"));
             shortDis1 = 2.2f;
-            FoundObjects1 = new List<GameObject>(GameObject.FindGameObjectsWithTag("Rabbit"));            
+            FoundObjects1 = new List<GameObject>(GameObject.FindGameObjectsWithTag("Rabbit"));
+            
+                    
             foreach (GameObject found1 in FoundObjects1){                   
                 foreach (GameObject found2 in FoundObjects2)
                 {
@@ -70,7 +73,6 @@ public class Turn : MonoBehaviour
                     }
                 }
                 Debug.Log(shortDis1);
-                gr = grass.name;
                 if(shortDis1 < 2.0001){
                 cost = cost1.text;
                 cost_ = int.Parse(cost);
@@ -78,11 +80,14 @@ public class Turn : MonoBehaviour
                 cost= cost_.ToString();
                 cost1.text = cost;
                 Destroy(grass);
-                }
                 
-                
-                
+                }   
             }
+            
+            
+                
+                
+            
             shortDis1 = 2.2f;
             FoundObjects3 = new List<GameObject>(GameObject.FindGameObjectsWithTag("Gazelle"));            
             foreach (GameObject found1 in FoundObjects3){                   
