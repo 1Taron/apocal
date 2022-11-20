@@ -3004,7 +3004,7 @@ MonoBehaviour:
   Animal08: {fileID: 3085116524877462095, guid: 80d4eb20113df21439bb6595a5a5d224, type: 3}
   Animal09: {fileID: 1457367252635600462, guid: 45bef7fe038cd83428276a9b531767f5, type: 3}
   Animal10: {fileID: 4312139895082580228, guid: cf175196068a2fa44af7e2571923eff5, type: 3}
-  Animal11: {fileID: 4009673611294492235, guid: cb2c06809b9fafd40b0949a0818acd6e, type: 3}
+  Animal11: {fileID: 8688545414697433442, guid: 2c804abdbd60bec498b8b57236027e24, type: 3}
   C: {fileID: 519420031}
 --- !u!4 &1358927862
 Transform:

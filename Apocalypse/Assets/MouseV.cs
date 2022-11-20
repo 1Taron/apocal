@@ -33,6 +33,7 @@ public class MouseV : MonoBehaviour
         
         if (Input.GetMouseButtonDown(0))
         {
+            
             Vector2 pos = C.ScreenToWorldPoint(Input.mousePosition);
             RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero);
 
@@ -59,6 +60,11 @@ public class MouseV : MonoBehaviour
                     if(hit.collider.gameObject.name == "Rabiit(Clone)"){
                         if(battle_info.text == "Player1 Turn")
                         {
+                            for(int x = 1; x<=41; x++){
+                                for(int y = 1; y<=31; y++){
+                                    GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                }
+                            }
                             clone = hit.collider.gameObject;
                             string name = tile.name;
                             char sp = ' ';
@@ -229,7 +235,12 @@ public class MouseV : MonoBehaviour
                             }
                         }
                         else if(battle_info.text == "Player2 Turn")
-                        {                     
+                        {                    
+                            for(int x = 1; x<=41; x++){
+                                for(int y = 1; y<=31; y++){
+                                    GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                }
+                            } 
                             clone = hit.collider.gameObject;
                             string name = tile.name;
                             char sp = ' ';
@@ -279,6 +290,11 @@ public class MouseV : MonoBehaviour
                     else if(hit.collider.gameObject.name == "Snake(Clone)"){
                         if(battle_info.text == "Player1 Turn")
                         {
+                            for(int x = 1; x<=41; x++){
+                                for(int y = 1; y<=31; y++){
+                                    GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                }
+                            }
                         clone = hit.collider.gameObject;
                         string name = tile.name;
                         char sp = ' ';
@@ -467,6 +483,11 @@ public class MouseV : MonoBehaviour
                         }
                         else if(battle_info.text == "Player2 Turn")
                         {
+                            for(int x = 1; x<=41; x++){
+                                for(int y = 1; y<=31; y++){
+                                    GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                }
+                            }
                         clone = hit.collider.gameObject;
                         string name = tile.name;
                         char sp = ' ';
@@ -528,6 +549,11 @@ public class MouseV : MonoBehaviour
                     }
                     else if(hit.collider.gameObject.name == "Croco(Clone)"){
                         if(battle_info.text == "Player1 Turn"){
+                            for(int x = 1; x<=41; x++){
+                                for(int y = 1; y<=31; y++){
+                                    GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                }
+                            }
                         clone = hit.collider.gameObject;
                         string name = tile.name;
                         char sp = ' ';
@@ -586,7 +612,7 @@ public class MouseV : MonoBehaviour
                         }
                         }
                         else if(battle_info.text == "Player2 Turn"){
-                            if(clone.name == "Croco2(Clone)")
+                            if(clone.name == "Croco2(Clone)" || clone.name == "Snake2(Clone)")
                             {
                                 if(GameObject.Find(tile.name).transform.Find("movehighlight").gameObject.activeSelf == true)
                                 {
@@ -605,7 +631,47 @@ public class MouseV : MonoBehaviour
                                     Destroy(hit.collider.gameObject);
                                 }
                             }
-                            else if(clone.name == "Hippo2(Clone)" || clone.name == "Rhino2(Clone)" || clone.name == "Giaffe2(Clone)" || clone.name == "Lion2(Clone)" || clone.name == "Eagle2(Clone)" || clone.name == "Giaffe2(Clone)")
+                            else if(clone.name == "Hippo2(Clone)" || clone.name == "Lion2(Clone)" || clone.name == "Eagle2(Clone)" || clone.name == "Cheetah2(Clone)")
+                            {
+                                if(GameObject.Find(tile.name).transform.Find("movehighlight").gameObject.activeSelf == true)
+                                {
+                                    float xpos = hit.collider.gameObject.transform.position.x;
+                                    float ypos = hit.collider.gameObject.transform.position.y;
+                                    Debug.Log(xpos);
+                                    clone.transform.position=new Vector3(xpos,ypos,-2);
+                                    for(int x = 1; x<=41; x++){
+                                        for(int y = 1; y<=31; y++){
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                        }
+                                    }                              
+                                    Destroy(hit.collider.gameObject);
+                                    cost_ = cost2.text;
+
+                                    cost_2 = int.Parse(cost_);
+                                    cost_2 = cost_2 + 2;
+                                    cost_= cost_2.ToString();
+                                    cost2.text = cost_;
+                                    
+                                }
+                            }
+                            else if(clone.name == "Rabbit2(Clone)" || clone.name == "Hyena2(Clone)" || clone.name == "Gazelle2(Clone)")
+                            {
+                                if(GameObject.Find(tile.name).transform.Find("movehighlight").gameObject.activeSelf == true)
+                                {
+                                    float xpos = hit.collider.gameObject.transform.position.x;
+                                    float ypos = hit.collider.gameObject.transform.position.y;
+                                    Debug.Log(xpos);
+                                    clone.transform.position=new Vector3(xpos,ypos,-2);
+                                    for(int x = 1; x<=41; x++){
+                                        for(int y = 1; y<=31; y++){
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                        }
+                                    }                              
+                                    Destroy(clone);
+                                    
+                                }
+                            }
+                            else if(clone.name == "Giaffe2(Clone)" || clone.name == "Rhino2(Clone)")
                             {
                                 if(GameObject.Find(tile.name).transform.Find("movehighlight").gameObject.activeSelf == true)
                                 {
@@ -622,7 +688,53 @@ public class MouseV : MonoBehaviour
                                     
                                 }
                             }
-                            else if(clone.name == "Rabbit2(Clone)")
+                        }            
+                    }
+                    else if(hit.collider.gameObject.name == "Croco2(Clone)"){
+                        if(battle_info.text == "Player1 Turn"){
+                            if(clone.name == "Croco(Clone)" || clone.name == "Snake(Clone)")
+                            {
+                                if(GameObject.Find(tile.name).transform.Find("movehighlight").gameObject.activeSelf == true)
+                                {
+                                    float xpos = hit.collider.gameObject.transform.position.x;
+                                    float ypos = hit.collider.gameObject.transform.position.y;
+                                    Debug.Log(xpos);
+                                    clone.transform.position=new Vector3(xpos,ypos,-2);
+                                    for(int x = 1; x<=41; x++){
+                                        for(int y = 1; y<=31; y++){
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                        }
+                                    }
+                                    
+                                    
+                                    Destroy(clone);
+                                    Destroy(hit.collider.gameObject);
+                                }
+                            }
+                            else if(clone.name == "Hippo(Clone)" || clone.name == "Lion(Clone)" || clone.name == "Eagle(Clone)" || clone.name == "Cheetah(Clone)")
+                            {
+                                if(GameObject.Find(tile.name).transform.Find("movehighlight").gameObject.activeSelf == true)
+                                {
+                                    float xpos = hit.collider.gameObject.transform.position.x;
+                                    float ypos = hit.collider.gameObject.transform.position.y;
+                                    Debug.Log(xpos);
+                                    clone.transform.position=new Vector3(xpos,ypos,-2);
+                                    for(int x = 1; x<=41; x++){
+                                        for(int y = 1; y<=31; y++){
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                        }
+                                    }                              
+                                    Destroy(hit.collider.gameObject);
+                                    cost_ = cost1.text;
+
+                                    cost_1 = int.Parse(cost_);
+                                    cost_1 = cost_1 + 2;
+                                    cost_= cost_1.ToString();
+                                    cost1.text = cost_;
+                                    
+                                }
+                            }
+                            else if(clone.name == "Rabbit(Clone)" || clone.name == "Hyena(Clone)" || clone.name == "Gazelle(Clone)")
                             {
                                 if(GameObject.Find(tile.name).transform.Find("movehighlight").gameObject.activeSelf == true)
                                 {
@@ -636,21 +748,33 @@ public class MouseV : MonoBehaviour
                                         }
                                     }                              
                                     Destroy(clone);
-                                    cost_ = cost1.text;
-
-                                    cost_1 = int.Parse(cost_);
-                                    cost_1 = cost_1 + 1;
-                                    cost_= cost_1.ToString();
-                                    cost1.text = cost_;
+                                    
                                 }
                             }
-                        }            
-                    }
-                    else if(hit.collider.gameObject.name == "Croco2(Clone)"){
-                        if(battle_info.text == "Player1 Turn"){
-
+                            else if(clone.name == "Giaffe(Clone)" || clone.name == "Rhino(Clone)")
+                            {
+                                if(GameObject.Find(tile.name).transform.Find("movehighlight").gameObject.activeSelf == true)
+                                {
+                                    float xpos = hit.collider.gameObject.transform.position.x;
+                                    float ypos = hit.collider.gameObject.transform.position.y;
+                                    Debug.Log(xpos);
+                                    clone.transform.position=new Vector3(xpos,ypos,-2);
+                                    for(int x = 1; x<=41; x++){
+                                        for(int y = 1; y<=31; y++){
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                        }
+                                    }                              
+                                    Destroy(hit.collider.gameObject);
+                                    
+                                }
+                            }
                         }
                         else if(battle_info.text == "Player2 Turn"){
+                            for(int x = 1; x<=41; x++){
+                                for(int y = 1; y<=31; y++){
+                                    GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                }
+                            }
                         clone = hit.collider.gameObject;
                         string name = tile.name;
                         char sp = ' ';
@@ -711,6 +835,11 @@ public class MouseV : MonoBehaviour
                     }
                     else if(hit.collider.gameObject.name == "Hippo(Clone)"){
                         if(battle_info.text == "Player1 Turn"){
+                            for(int x = 1; x<=41; x++){
+                                for(int y = 1; y<=31; y++){
+                                    GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                }
+                            }
                         clone = hit.collider.gameObject;
                         string name = tile.name;
                         char sp = ' ';
@@ -769,14 +898,169 @@ public class MouseV : MonoBehaviour
                         }
                         }
                         else if(battle_info.text == "Player2 Turn"){
+                            if(clone.name == "Hippo2(Clone)" || clone.name == "Snake2(Clone)")
+                            {
+                                if(GameObject.Find(tile.name).transform.Find("movehighlight").gameObject.activeSelf == true)
+                                {
+                                    float xpos = hit.collider.gameObject.transform.position.x;
+                                    float ypos = hit.collider.gameObject.transform.position.y;
+                                    Debug.Log(xpos);
+                                    clone.transform.position=new Vector3(xpos,ypos,-2);
+                                    for(int x = 1; x<=41; x++){
+                                        for(int y = 1; y<=31; y++){
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                        }
+                                    }
+                                    
+                                    
+                                    Destroy(clone);
+                                    Destroy(hit.collider.gameObject);
+                                }
+                            }
+                            else if(clone.name == "Lion2(Clone)" || clone.name == "Eagle2(Clone)" || clone.name == "Cheetah2(Clone)")
+                            {
+                                if(GameObject.Find(tile.name).transform.Find("movehighlight").gameObject.activeSelf == true)
+                                {
+                                    float xpos = hit.collider.gameObject.transform.position.x;
+                                    float ypos = hit.collider.gameObject.transform.position.y;
+                                    Debug.Log(xpos);
+                                    clone.transform.position=new Vector3(xpos,ypos,-2);
+                                    for(int x = 1; x<=41; x++){
+                                        for(int y = 1; y<=31; y++){
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                        }
+                                    }                              
+                                    Destroy(hit.collider.gameObject);
+                                    cost_ = cost2.text;
 
+                                    cost_2 = int.Parse(cost_);
+                                    cost_2 = cost_2 + 5;
+                                    cost_= cost_2.ToString();
+                                    cost2.text = cost_;
+                                    
+                                }
+                            }
+                            else if(clone.name == "Rabbit2(Clone)" || clone.name == "Hyena2(Clone)" || clone.name == "Gazelle2(Clone)" || clone.name == "Rhino2(Clone)" || clone.name == "Croco2(Clone)")
+                            {
+                                if(GameObject.Find(tile.name).transform.Find("movehighlight").gameObject.activeSelf == true)
+                                {
+                                    float xpos = hit.collider.gameObject.transform.position.x;
+                                    float ypos = hit.collider.gameObject.transform.position.y;
+                                    Debug.Log(xpos);
+                                    clone.transform.position=new Vector3(xpos,ypos,-2);
+                                    for(int x = 1; x<=41; x++){
+                                        for(int y = 1; y<=31; y++){
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                        }
+                                    }                              
+                                    Destroy(clone);
+                                    
+                                }
+                            }
+                            else if(clone.name == "Giaffe2(Clone)")
+                            {
+                                if(GameObject.Find(tile.name).transform.Find("movehighlight").gameObject.activeSelf == true)
+                                {
+                                    float xpos = hit.collider.gameObject.transform.position.x;
+                                    float ypos = hit.collider.gameObject.transform.position.y;
+                                    Debug.Log(xpos);
+                                    clone.transform.position=new Vector3(xpos,ypos,-2);
+                                    for(int x = 1; x<=41; x++){
+                                        for(int y = 1; y<=31; y++){
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                        }
+                                    }                              
+                                    Destroy(hit.collider.gameObject);
+                                    
+                                }
+                            }
                         }            
                     }
                     else if(hit.collider.gameObject.name == "Hippo2(Clone)"){
                         if(battle_info.text == "Player1 Turn"){
+                            if(clone.name == "Hippo(Clone)" || clone.name == "Snake(Clone)")
+                            {
+                                if(GameObject.Find(tile.name).transform.Find("movehighlight").gameObject.activeSelf == true)
+                                {
+                                    float xpos = hit.collider.gameObject.transform.position.x;
+                                    float ypos = hit.collider.gameObject.transform.position.y;
+                                    Debug.Log(xpos);
+                                    clone.transform.position=new Vector3(xpos,ypos,-2);
+                                    for(int x = 1; x<=41; x++){
+                                        for(int y = 1; y<=31; y++){
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                        }
+                                    }
+                                    
+                                    
+                                    Destroy(clone);
+                                    Destroy(hit.collider.gameObject);
+                                }
+                            }
+                            else if(clone.name == "Lion(Clone)" || clone.name == "Eagle(Clone)" || clone.name == "Cheetah(Clone)")
+                            {
+                                if(GameObject.Find(tile.name).transform.Find("movehighlight").gameObject.activeSelf == true)
+                                {
+                                    float xpos = hit.collider.gameObject.transform.position.x;
+                                    float ypos = hit.collider.gameObject.transform.position.y;
+                                    Debug.Log(xpos);
+                                    clone.transform.position=new Vector3(xpos,ypos,-2);
+                                    for(int x = 1; x<=41; x++){
+                                        for(int y = 1; y<=31; y++){
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                        }
+                                    }                              
+                                    Destroy(hit.collider.gameObject);
+                                    cost_ = cost1.text;
 
+                                    cost_1 = int.Parse(cost_);
+                                    cost_1 = cost_1 + 5;
+                                    cost_= cost_1.ToString();
+                                    cost1.text = cost_;
+                                    
+                                }
+                            }
+                            else if(clone.name == "Rabiit(Clone)" || clone.name == "Hyena(Clone)" || clone.name == "Gazelle(Clone)" || clone.name == "Rhino(Clone)" || clone.name == "Croco(Clone)")
+                            {
+                                if(GameObject.Find(tile.name).transform.Find("movehighlight").gameObject.activeSelf == true)
+                                {
+                                    float xpos = hit.collider.gameObject.transform.position.x;
+                                    float ypos = hit.collider.gameObject.transform.position.y;
+                                    Debug.Log(xpos);
+                                    clone.transform.position=new Vector3(xpos,ypos,-2);
+                                    for(int x = 1; x<=41; x++){
+                                        for(int y = 1; y<=31; y++){
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                        }
+                                    }                              
+                                    Destroy(clone);
+                                    
+                                }
+                            }
+                            else if(clone.name == "Giaffe(Clone)")
+                            {
+                                if(GameObject.Find(tile.name).transform.Find("movehighlight").gameObject.activeSelf == true)
+                                {
+                                    float xpos = hit.collider.gameObject.transform.position.x;
+                                    float ypos = hit.collider.gameObject.transform.position.y;
+                                    Debug.Log(xpos);
+                                    clone.transform.position=new Vector3(xpos,ypos,-2);
+                                    for(int x = 1; x<=41; x++){
+                                        for(int y = 1; y<=31; y++){
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                        }
+                                    }                              
+                                    Destroy(hit.collider.gameObject);
+                                    
+                                }
+                            }
                         }
                         else if(battle_info.text == "Player2 Turn"){
+                            for(int x = 1; x<=41; x++){
+                                for(int y = 1; y<=31; y++){
+                                    GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                }
+                            }
                         clone = hit.collider.gameObject;
                         string name = tile.name;
                         char sp = ' ';
@@ -837,6 +1121,11 @@ public class MouseV : MonoBehaviour
                     }
                     else if(hit.collider.gameObject.name == "Rhino(Clone)"){
                         if(battle_info.text == "Player1 Turn"){
+                            for(int x = 1; x<=41; x++){
+                                for(int y = 1; y<=31; y++){
+                                    GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                }
+                            }
                         clone = hit.collider.gameObject;
                         string name = tile.name;
                         char sp = ' ';
@@ -895,14 +1184,169 @@ public class MouseV : MonoBehaviour
                         }
                         }
                         else if(battle_info.text == "Player2 Turn"){
+                            if(clone.name == "Rhino2(Clone)" || clone.name == "Snake2(Clone)")
+                            {
+                                if(GameObject.Find(tile.name).transform.Find("movehighlight").gameObject.activeSelf == true)
+                                {
+                                    float xpos = hit.collider.gameObject.transform.position.x;
+                                    float ypos = hit.collider.gameObject.transform.position.y;
+                                    Debug.Log(xpos);
+                                    clone.transform.position=new Vector3(xpos,ypos,-2);
+                                    for(int x = 1; x<=41; x++){
+                                        for(int y = 1; y<=31; y++){
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                        }
+                                    }
+                                    
+                                    
+                                    Destroy(clone);
+                                    Destroy(hit.collider.gameObject);
+                                }
+                            }
+                            else if(clone.name == "Lion2(Clone)" || clone.name == "Eagle2(Clone)" || clone.name == "Cheetah2(Clone)" || clone.name == "Hippo2(Clone)")
+                            {
+                                if(GameObject.Find(tile.name).transform.Find("movehighlight").gameObject.activeSelf == true)
+                                {
+                                    float xpos = hit.collider.gameObject.transform.position.x;
+                                    float ypos = hit.collider.gameObject.transform.position.y;
+                                    Debug.Log(xpos);
+                                    clone.transform.position=new Vector3(xpos,ypos,-2);
+                                    for(int x = 1; x<=41; x++){
+                                        for(int y = 1; y<=31; y++){
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                        }
+                                    }                              
+                                    Destroy(hit.collider.gameObject);
+                                    cost_ = cost2.text;
 
+                                    cost_2 = int.Parse(cost_);
+                                    cost_2 = cost_2 + 4;
+                                    cost_= cost_2.ToString();
+                                    cost2.text = cost_;
+                                    
+                                }
+                            }
+                            else if(clone.name == "Rabbit2(Clone)" || clone.name == "Hyena2(Clone)" || clone.name == "Gazelle2(Clone)" || clone.name == "Croco2(Clone)")
+                            {
+                                if(GameObject.Find(tile.name).transform.Find("movehighlight").gameObject.activeSelf == true)
+                                {
+                                    float xpos = hit.collider.gameObject.transform.position.x;
+                                    float ypos = hit.collider.gameObject.transform.position.y;
+                                    Debug.Log(xpos);
+                                    clone.transform.position=new Vector3(xpos,ypos,-2);
+                                    for(int x = 1; x<=41; x++){
+                                        for(int y = 1; y<=31; y++){
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                        }
+                                    }                              
+                                    Destroy(clone);
+                                    
+                                }
+                            }
+                            else if(clone.name == "Giaffe2(Clone)")
+                            {
+                                if(GameObject.Find(tile.name).transform.Find("movehighlight").gameObject.activeSelf == true)
+                                {
+                                    float xpos = hit.collider.gameObject.transform.position.x;
+                                    float ypos = hit.collider.gameObject.transform.position.y;
+                                    Debug.Log(xpos);
+                                    clone.transform.position=new Vector3(xpos,ypos,-2);
+                                    for(int x = 1; x<=41; x++){
+                                        for(int y = 1; y<=31; y++){
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                        }
+                                    }                              
+                                    Destroy(hit.collider.gameObject);
+                                    
+                                }
+                            }
                         }            
                     }
                     else if(hit.collider.gameObject.name == "Rhino2(Clone)"){
                         if(battle_info.text == "Player1 Turn"){
+                            if(clone.name == "Rhino(Clone)" || clone.name == "Snake(Clone)")
+                            {
+                                if(GameObject.Find(tile.name).transform.Find("movehighlight").gameObject.activeSelf == true)
+                                {
+                                    float xpos = hit.collider.gameObject.transform.position.x;
+                                    float ypos = hit.collider.gameObject.transform.position.y;
+                                    Debug.Log(xpos);
+                                    clone.transform.position=new Vector3(xpos,ypos,-2);
+                                    for(int x = 1; x<=41; x++){
+                                        for(int y = 1; y<=31; y++){
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                        }
+                                    }
+                                    
+                                    
+                                    Destroy(clone);
+                                    Destroy(hit.collider.gameObject);
+                                }
+                            }
+                            else if(clone.name == "Lion(Clone)" || clone.name == "Eagle(Clone)" || clone.name == "Cheetah(Clone)" || clone.name == "Hippo(Clone)")
+                            {
+                                if(GameObject.Find(tile.name).transform.Find("movehighlight").gameObject.activeSelf == true)
+                                {
+                                    float xpos = hit.collider.gameObject.transform.position.x;
+                                    float ypos = hit.collider.gameObject.transform.position.y;
+                                    Debug.Log(xpos);
+                                    clone.transform.position=new Vector3(xpos,ypos,-2);
+                                    for(int x = 1; x<=41; x++){
+                                        for(int y = 1; y<=31; y++){
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                        }
+                                    }                              
+                                    Destroy(hit.collider.gameObject);
+                                    cost_ = cost1.text;
 
+                                    cost_1 = int.Parse(cost_);
+                                    cost_1 = cost_1 + 4;
+                                    cost_= cost_1.ToString();
+                                    cost1.text = cost_;
+                                    
+                                }
+                            }
+                            else if(clone.name == "Rabiit(Clone)" || clone.name == "Hyena(Clone)" || clone.name == "Gazelle(Clone)" || clone.name == "Croco(Clone)")
+                            {
+                                if(GameObject.Find(tile.name).transform.Find("movehighlight").gameObject.activeSelf == true)
+                                {
+                                    float xpos = hit.collider.gameObject.transform.position.x;
+                                    float ypos = hit.collider.gameObject.transform.position.y;
+                                    Debug.Log(xpos);
+                                    clone.transform.position=new Vector3(xpos,ypos,-2);
+                                    for(int x = 1; x<=41; x++){
+                                        for(int y = 1; y<=31; y++){
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                        }
+                                    }                              
+                                    Destroy(clone);
+                                    
+                                }
+                            }
+                            else if(clone.name == "Giaffe(Clone)")
+                            {
+                                if(GameObject.Find(tile.name).transform.Find("movehighlight").gameObject.activeSelf == true)
+                                {
+                                    float xpos = hit.collider.gameObject.transform.position.x;
+                                    float ypos = hit.collider.gameObject.transform.position.y;
+                                    Debug.Log(xpos);
+                                    clone.transform.position=new Vector3(xpos,ypos,-2);
+                                    for(int x = 1; x<=41; x++){
+                                        for(int y = 1; y<=31; y++){
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                        }
+                                    }                              
+                                    Destroy(hit.collider.gameObject);
+                                    
+                                }
+                            }
                         }
                         else if(battle_info.text == "Player2 Turn"){
+                            for(int x = 1; x<=41; x++){
+                                for(int y = 1; y<=31; y++){
+                                    GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                }
+                            }
                         clone = hit.collider.gameObject;
                         string name = tile.name;
                         char sp = ' ';
@@ -963,6 +1407,11 @@ public class MouseV : MonoBehaviour
                     }
                     else if(hit.collider.gameObject.name == "Hyena(Clone)"){
                         if(battle_info.text == "Player1 Turn"){
+                            for(int x = 1; x<=41; x++){
+                                for(int y = 1; y<=31; y++){
+                                    GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                }
+                            }
                         clone = hit.collider.gameObject;
                         string name = tile.name;
                         char sp = ' ';
@@ -1051,14 +1500,169 @@ public class MouseV : MonoBehaviour
                         }             
                         }
                         else if(battle_info.text == "Player2 Turn"){
+                            if(clone.name == "Hyena2(Clone)" || clone.name == "Snake2(Clone)")
+                            {
+                                if(GameObject.Find(tile.name).transform.Find("movehighlight").gameObject.activeSelf == true)
+                                {
+                                    float xpos = hit.collider.gameObject.transform.position.x;
+                                    float ypos = hit.collider.gameObject.transform.position.y;
+                                    Debug.Log(xpos);
+                                    clone.transform.position=new Vector3(xpos,ypos,-2);
+                                    for(int x = 1; x<=41; x++){
+                                        for(int y = 1; y<=31; y++){
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                        }
+                                    }
+                                    
+                                    
+                                    Destroy(clone);
+                                    Destroy(hit.collider.gameObject);
+                                }
+                            }
+                            else if(clone.name == "Lion2(Clone)" || clone.name == "Eagle2(Clone)" || clone.name == "Cheetah2(Clone)" || clone.name == "Hippo2(Clone)" || clone.name == "Croco2(Clone)")
+                            {
+                                if(GameObject.Find(tile.name).transform.Find("movehighlight").gameObject.activeSelf == true)
+                                {
+                                    float xpos = hit.collider.gameObject.transform.position.x;
+                                    float ypos = hit.collider.gameObject.transform.position.y;
+                                    Debug.Log(xpos);
+                                    clone.transform.position=new Vector3(xpos,ypos,-2);
+                                    for(int x = 1; x<=41; x++){
+                                        for(int y = 1; y<=31; y++){
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                        }
+                                    }                              
+                                    Destroy(hit.collider.gameObject);
+                                    cost_ = cost2.text;
 
+                                    cost_2 = int.Parse(cost_);
+                                    cost_2 = cost_2 + 1;
+                                    cost_= cost_2.ToString();
+                                    cost2.text = cost_;
+                                    
+                                }
+                            }
+                            else if(clone.name == "Rabbit2(Clone)" || clone.name == "Gazelle2(Clone)")
+                            {
+                                if(GameObject.Find(tile.name).transform.Find("movehighlight").gameObject.activeSelf == true)
+                                {
+                                    float xpos = hit.collider.gameObject.transform.position.x;
+                                    float ypos = hit.collider.gameObject.transform.position.y;
+                                    Debug.Log(xpos);
+                                    clone.transform.position=new Vector3(xpos,ypos,-2);
+                                    for(int x = 1; x<=41; x++){
+                                        for(int y = 1; y<=31; y++){
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                        }
+                                    }                              
+                                    Destroy(clone);
+                                    
+                                }
+                            }
+                            else if(clone.name == "Giaffe2(Clone)" || clone.name == "Giaffe2(Clone)")
+                            {
+                                if(GameObject.Find(tile.name).transform.Find("movehighlight").gameObject.activeSelf == true)
+                                {
+                                    float xpos = hit.collider.gameObject.transform.position.x;
+                                    float ypos = hit.collider.gameObject.transform.position.y;
+                                    Debug.Log(xpos);
+                                    clone.transform.position=new Vector3(xpos,ypos,-2);
+                                    for(int x = 1; x<=41; x++){
+                                        for(int y = 1; y<=31; y++){
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                        }
+                                    }                              
+                                    Destroy(hit.collider.gameObject);
+                                    
+                                }
+                            }
                         }            
                     }
                     else if(hit.collider.gameObject.name == "Hyena2(Clone)"){
                         if(battle_info.text == "Player1 Turn"){
+                            if(clone.name == "Hyena(Clone)" || clone.name == "Snake(Clone)")
+                            {
+                                if(GameObject.Find(tile.name).transform.Find("movehighlight").gameObject.activeSelf == true)
+                                {
+                                    float xpos = hit.collider.gameObject.transform.position.x;
+                                    float ypos = hit.collider.gameObject.transform.position.y;
+                                    Debug.Log(xpos);
+                                    clone.transform.position=new Vector3(xpos,ypos,-2);
+                                    for(int x = 1; x<=41; x++){
+                                        for(int y = 1; y<=31; y++){
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                        }
+                                    }
+                                    
+                                    
+                                    Destroy(clone);
+                                    Destroy(hit.collider.gameObject);
+                                }
+                            }
+                            else if(clone.name == "Lion(Clone)" || clone.name == "Eagle(Clone)" || clone.name == "Cheetah(Clone)" || clone.name == "Hippo(Clone)" || clone.name == "Croco(Clone)")
+                            {
+                                if(GameObject.Find(tile.name).transform.Find("movehighlight").gameObject.activeSelf == true)
+                                {
+                                    float xpos = hit.collider.gameObject.transform.position.x;
+                                    float ypos = hit.collider.gameObject.transform.position.y;
+                                    Debug.Log(xpos);
+                                    clone.transform.position=new Vector3(xpos,ypos,-2);
+                                    for(int x = 1; x<=41; x++){
+                                        for(int y = 1; y<=31; y++){
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                        }
+                                    }                              
+                                    Destroy(hit.collider.gameObject);
+                                    cost_ = cost1.text;
 
+                                    cost_1 = int.Parse(cost_);
+                                    cost_1 = cost_1 + 1;
+                                    cost_= cost_1.ToString();
+                                    cost1.text = cost_;
+                                    
+                                }
+                            }
+                            else if(clone.name == "Rabiit(Clone)" || clone.name == "Gazelle(Clone)")
+                            {
+                                if(GameObject.Find(tile.name).transform.Find("movehighlight").gameObject.activeSelf == true)
+                                {
+                                    float xpos = hit.collider.gameObject.transform.position.x;
+                                    float ypos = hit.collider.gameObject.transform.position.y;
+                                    Debug.Log(xpos);
+                                    clone.transform.position=new Vector3(xpos,ypos,-2);
+                                    for(int x = 1; x<=41; x++){
+                                        for(int y = 1; y<=31; y++){
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                        }
+                                    }                              
+                                    Destroy(clone);
+                                    
+                                }
+                            }
+                            else if(clone.name == "Giaffe(Clone)" || clone.name == "Giaffe(Clone)")
+                            {
+                                if(GameObject.Find(tile.name).transform.Find("movehighlight").gameObject.activeSelf == true)
+                                {
+                                    float xpos = hit.collider.gameObject.transform.position.x;
+                                    float ypos = hit.collider.gameObject.transform.position.y;
+                                    Debug.Log(xpos);
+                                    clone.transform.position=new Vector3(xpos,ypos,-2);
+                                    for(int x = 1; x<=41; x++){
+                                        for(int y = 1; y<=31; y++){
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                        }
+                                    }                              
+                                    Destroy(hit.collider.gameObject);
+                                    
+                                }
+                            }
                         }
                         else if(battle_info.text == "Player2 Turn"){
+                            for(int x = 1; x<=41; x++){
+                                for(int y = 1; y<=31; y++){
+                                    GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                }
+                            }
                         clone = hit.collider.gameObject;
                         string name = tile.name;
                         char sp = ' ';
@@ -1149,6 +1753,11 @@ public class MouseV : MonoBehaviour
                     }
                     else if(hit.collider.gameObject.name == "Giaffe(Clone)"){
                         if(battle_info.text == "Player1 Turn"){
+                            for(int x = 1; x<=41; x++){
+                                for(int y = 1; y<=31; y++){
+                                    GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                }
+                            }
                         clone = hit.collider.gameObject;
                         string name = tile.name;
                         char sp = ' ';
@@ -1237,14 +1846,137 @@ public class MouseV : MonoBehaviour
                         }             
                         }
                         else if(battle_info.text == "Player2 Turn"){
+                            if(clone.name == "Giaffe2(Clone)" || clone.name == "Snake2(Clone)")
+                            {
+                                if(GameObject.Find(tile.name).transform.Find("movehighlight").gameObject.activeSelf == true)
+                                {
+                                    float xpos = hit.collider.gameObject.transform.position.x;
+                                    float ypos = hit.collider.gameObject.transform.position.y;
+                                    Debug.Log(xpos);
+                                    clone.transform.position=new Vector3(xpos,ypos,-2);
+                                    for(int x = 1; x<=41; x++){
+                                        for(int y = 1; y<=31; y++){
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                        }
+                                    }
+                                    
+                                    
+                                    Destroy(clone);
+                                    Destroy(hit.collider.gameObject);
+                                }
+                            }
+                            else if(clone.name == "Lion2(Clone)" || clone.name == "Eagle2(Clone)" || clone.name == "Cheetah2(Clone)")
+                            {
+                                if(GameObject.Find(tile.name).transform.Find("movehighlight").gameObject.activeSelf == true)
+                                {
+                                    float xpos = hit.collider.gameObject.transform.position.x;
+                                    float ypos = hit.collider.gameObject.transform.position.y;
+                                    Debug.Log(xpos);
+                                    clone.transform.position=new Vector3(xpos,ypos,-2);
+                                    for(int x = 1; x<=41; x++){
+                                        for(int y = 1; y<=31; y++){
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                        }
+                                    }                              
+                                    Destroy(hit.collider.gameObject);
+                                    cost_ = cost2.text;
 
+                                    cost_2 = int.Parse(cost_);
+                                    cost_2 = cost_2 + 6;
+                                    cost_= cost_2.ToString();
+                                    cost2.text = cost_;
+                                    
+                                }
+                            }
+                            else if(clone.name == "Rhino2(Clone)" || clone.name == "Hyena2(Clone)" || clone.name == "Rabbit2(Clone)" || clone.name == "Gazelle2(Clone)" || clone.name == "Hippo2(Clone)" || clone.name == "Croco2(Clone)")
+                            {
+                                if(GameObject.Find(tile.name).transform.Find("movehighlight").gameObject.activeSelf == true)
+                                {
+                                    float xpos = hit.collider.gameObject.transform.position.x;
+                                    float ypos = hit.collider.gameObject.transform.position.y;
+                                    Debug.Log(xpos);
+                                    clone.transform.position=new Vector3(xpos,ypos,-2);
+                                    for(int x = 1; x<=41; x++){
+                                        for(int y = 1; y<=31; y++){
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                        }
+                                    }                              
+                                    Destroy(clone);
+                                    
+                                }
+                            }
+                            
                         }            
                     }
                     else if(hit.collider.gameObject.name == "Giaffe2(Clone)"){
                         if(battle_info.text == "Player Turn"){
+                            if(clone.name == "Giaffe(Clone)" || clone.name == "Snake(Clone)")
+                            {
+                                if(GameObject.Find(tile.name).transform.Find("movehighlight").gameObject.activeSelf == true)
+                                {
+                                    float xpos = hit.collider.gameObject.transform.position.x;
+                                    float ypos = hit.collider.gameObject.transform.position.y;
+                                    Debug.Log(xpos);
+                                    clone.transform.position=new Vector3(xpos,ypos,-2);
+                                    for(int x = 1; x<=41; x++){
+                                        for(int y = 1; y<=31; y++){
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                        }
+                                    }
+                                    
+                                    
+                                    Destroy(clone);
+                                    Destroy(hit.collider.gameObject);
+                                }
+                            }
+                            else if(clone.name == "Lion(Clone)" || clone.name == "Eagle(Clone)" || clone.name == "Cheetah(Clone)")
+                            {
+                                if(GameObject.Find(tile.name).transform.Find("movehighlight").gameObject.activeSelf == true)
+                                {
+                                    float xpos = hit.collider.gameObject.transform.position.x;
+                                    float ypos = hit.collider.gameObject.transform.position.y;
+                                    Debug.Log(xpos);
+                                    clone.transform.position=new Vector3(xpos,ypos,-2);
+                                    for(int x = 1; x<=41; x++){
+                                        for(int y = 1; y<=31; y++){
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                        }
+                                    }                              
+                                    Destroy(hit.collider.gameObject);
+                                    cost_ = cost1.text;
 
+                                    cost_1 = int.Parse(cost_);
+                                    cost_1 = cost_1 + 6;
+                                    cost_= cost_1.ToString();
+                                    cost1.text = cost_;
+                                    
+                                }
+                            }
+                            else if(clone.name == "Rhino(Clone)" || clone.name == "Hyena(Clone)" || clone.name == "Rabiit(Clone)" || clone.name == "Gazelle(Clone)" || clone.name == "Hippo(Clone)" || clone.name == "Croco(Clone)")
+                            {
+                                if(GameObject.Find(tile.name).transform.Find("movehighlight").gameObject.activeSelf == true)
+                                {
+                                    float xpos = hit.collider.gameObject.transform.position.x;
+                                    float ypos = hit.collider.gameObject.transform.position.y;
+                                    Debug.Log(xpos);
+                                    clone.transform.position=new Vector3(xpos,ypos,-2);
+                                    for(int x = 1; x<=41; x++){
+                                        for(int y = 1; y<=31; y++){
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                        }
+                                    }                              
+                                    Destroy(clone);
+                                    
+                                }
+                            }
+                            
                         }
                         else if(battle_info.text == "Player2 Turn"){
+                            for(int x = 1; x<=41; x++){
+                                for(int y = 1; y<=31; y++){
+                                    GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                }
+                            }
                         clone = hit.collider.gameObject;
                         string name = tile.name;
                         char sp = ' ';
@@ -1335,6 +2067,11 @@ public class MouseV : MonoBehaviour
                     }
                     else if(hit.collider.gameObject.name == "Gazelle(Clone)"){
                         if(battle_info.text == "Player1 Turn"){
+                            for(int x = 1; x<=41; x++){
+                                for(int y = 1; y<=31; y++){
+                                    GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                }
+                            }
                         clone = hit.collider.gameObject;
                         string name = tile.name;
                         char sp = ' ';
@@ -1423,14 +2160,169 @@ public class MouseV : MonoBehaviour
                         }             
                         }
                         else if(battle_info.text == "Player2 Turn"){
+                            if(clone.name == "Gazelle2(Clone)" || clone.name == "Snake2(Clone)")
+                            {
+                                if(GameObject.Find(tile.name).transform.Find("movehighlight").gameObject.activeSelf == true)
+                                {
+                                    float xpos = hit.collider.gameObject.transform.position.x;
+                                    float ypos = hit.collider.gameObject.transform.position.y;
+                                    Debug.Log(xpos);
+                                    clone.transform.position=new Vector3(xpos,ypos,-2);
+                                    for(int x = 1; x<=41; x++){
+                                        for(int y = 1; y<=31; y++){
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                        }
+                                    }
+                                    
+                                    
+                                    Destroy(clone);
+                                    Destroy(hit.collider.gameObject);
+                                }
+                            }
+                            else if(clone.name == "Lion2(Clone)" || clone.name == "Eagle2(Clone)" || clone.name == "Cheetah2(Clone)" || clone.name == "Hyena2(Clone)" || clone.name == "Hippo2(Clone)" || clone.name == "Croco2(Clone)")
+                            {
+                                if(GameObject.Find(tile.name).transform.Find("movehighlight").gameObject.activeSelf == true)
+                                {
+                                    float xpos = hit.collider.gameObject.transform.position.x;
+                                    float ypos = hit.collider.gameObject.transform.position.y;
+                                    Debug.Log(xpos);
+                                    clone.transform.position=new Vector3(xpos,ypos,-2);
+                                    for(int x = 1; x<=41; x++){
+                                        for(int y = 1; y<=31; y++){
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                        }
+                                    }                              
+                                    Destroy(hit.collider.gameObject);
+                                    cost_ = cost2.text;
 
+                                    cost_2 = int.Parse(cost_);
+                                    cost_2 = cost_2 + 6;
+                                    cost_= cost_2.ToString();
+                                    cost2.text = cost_;
+                                    
+                                }
+                            }
+                            else if(clone.name == "Rabbit2(Clone)")
+                            {
+                                if(GameObject.Find(tile.name).transform.Find("movehighlight").gameObject.activeSelf == true)
+                                {
+                                    float xpos = hit.collider.gameObject.transform.position.x;
+                                    float ypos = hit.collider.gameObject.transform.position.y;
+                                    Debug.Log(xpos);
+                                    clone.transform.position=new Vector3(xpos,ypos,-2);
+                                    for(int x = 1; x<=41; x++){
+                                        for(int y = 1; y<=31; y++){
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                        }
+                                    }                              
+                                    Destroy(clone);
+                                    
+                                }
+                            }
+                            else if(clone.name == "Rhino2(Clone)" || clone.name == "Giaffe2(Clone)")
+                            {
+                                if(GameObject.Find(tile.name).transform.Find("movehighlight").gameObject.activeSelf == true)
+                                {
+                                    float xpos = hit.collider.gameObject.transform.position.x;
+                                    float ypos = hit.collider.gameObject.transform.position.y;
+                                    Debug.Log(xpos);
+                                    clone.transform.position=new Vector3(xpos,ypos,-2);
+                                    for(int x = 1; x<=41; x++){
+                                        for(int y = 1; y<=31; y++){
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                        }
+                                    }                              
+                                    Destroy(hit.collider.gameObject);
+                                    
+                                }
+                            }
                         }            
                     }
                     else if(hit.collider.gameObject.name == "Gazelle2(Clone)"){
                         if(battle_info.text == "Player Turn"){
+                            if(clone.name == "Gazelle(Clone)" || clone.name == "Snake(Clone)")
+                            {
+                                if(GameObject.Find(tile.name).transform.Find("movehighlight").gameObject.activeSelf == true)
+                                {
+                                    float xpos = hit.collider.gameObject.transform.position.x;
+                                    float ypos = hit.collider.gameObject.transform.position.y;
+                                    Debug.Log(xpos);
+                                    clone.transform.position=new Vector3(xpos,ypos,-2);
+                                    for(int x = 1; x<=41; x++){
+                                        for(int y = 1; y<=31; y++){
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                        }
+                                    }
+                                    
+                                    
+                                    Destroy(clone);
+                                    Destroy(hit.collider.gameObject);
+                                }
+                            }
+                            else if(clone.name == "Lion(Clone)" || clone.name == "Eagle(Clone)" || clone.name == "Cheetah(Clone)" || clone.name == "Hyena(Clone)" || clone.name == "Hippo(Clone)" || clone.name == "Croco(Clone)")
+                            {
+                                if(GameObject.Find(tile.name).transform.Find("movehighlight").gameObject.activeSelf == true)
+                                {
+                                    float xpos = hit.collider.gameObject.transform.position.x;
+                                    float ypos = hit.collider.gameObject.transform.position.y;
+                                    Debug.Log(xpos);
+                                    clone.transform.position=new Vector3(xpos,ypos,-2);
+                                    for(int x = 1; x<=41; x++){
+                                        for(int y = 1; y<=31; y++){
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                        }
+                                    }                              
+                                    Destroy(hit.collider.gameObject);
+                                    cost_ = cost1.text;
 
+                                    cost_1 = int.Parse(cost_);
+                                    cost_1 = cost_1 + 6;
+                                    cost_= cost_1.ToString();
+                                    cost1.text = cost_;
+                                    
+                                }
+                            }
+                            else if(clone.name == "Rabiit(Clone)")
+                            {
+                                if(GameObject.Find(tile.name).transform.Find("movehighlight").gameObject.activeSelf == true)
+                                {
+                                    float xpos = hit.collider.gameObject.transform.position.x;
+                                    float ypos = hit.collider.gameObject.transform.position.y;
+                                    Debug.Log(xpos);
+                                    clone.transform.position=new Vector3(xpos,ypos,-2);
+                                    for(int x = 1; x<=41; x++){
+                                        for(int y = 1; y<=31; y++){
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                        }
+                                    }                              
+                                    Destroy(clone);
+                                    
+                                }
+                            }
+                            else if(clone.name == "Rhino(Clone)" || clone.name == "Giaffe(Clone)")
+                            {
+                                if(GameObject.Find(tile.name).transform.Find("movehighlight").gameObject.activeSelf == true)
+                                {
+                                    float xpos = hit.collider.gameObject.transform.position.x;
+                                    float ypos = hit.collider.gameObject.transform.position.y;
+                                    Debug.Log(xpos);
+                                    clone.transform.position=new Vector3(xpos,ypos,-2);
+                                    for(int x = 1; x<=41; x++){
+                                        for(int y = 1; y<=31; y++){
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                        }
+                                    }                              
+                                    Destroy(hit.collider.gameObject);
+                                    
+                                }
+                            }
                         }
                         else if(battle_info.text == "Player2 Turn"){
+                            for(int x = 1; x<=41; x++){
+                                for(int y = 1; y<=31; y++){
+                                    GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                }
+                            }
                         clone = hit.collider.gameObject;
                         string name = tile.name;
                         char sp = ' ';
@@ -1521,6 +2413,11 @@ public class MouseV : MonoBehaviour
                     }
                     else if(hit.collider.gameObject.name == "Lion(Clone)"){
                         if(battle_info.text == "Player1 Turn"){
+                            for(int x = 1; x<=41; x++){
+                                for(int y = 1; y<=31; y++){
+                                    GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                }
+                            }
                         clone = hit.collider.gameObject;
                         string name = tile.name;
                         char sp = ' ';
@@ -1627,14 +2524,169 @@ public class MouseV : MonoBehaviour
                         }             
                         }
                         else if(battle_info.text == "Player2 Turn"){
+                            if(clone.name == "Lion2(Clone)" || clone.name == "Snake2(Clone)")
+                            {
+                                if(GameObject.Find(tile.name).transform.Find("movehighlight").gameObject.activeSelf == true)
+                                {
+                                    float xpos = hit.collider.gameObject.transform.position.x;
+                                    float ypos = hit.collider.gameObject.transform.position.y;
+                                    Debug.Log(xpos);
+                                    clone.transform.position=new Vector3(xpos,ypos,-2);
+                                    for(int x = 1; x<=41; x++){
+                                        for(int y = 1; y<=31; y++){
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                        }
+                                    }
+                                    
+                                    
+                                    Destroy(clone);
+                                    Destroy(hit.collider.gameObject);
+                                }
+                            }
+                            else if(clone.name == "Eagle2(Clone)")
+                            {
+                                if(GameObject.Find(tile.name).transform.Find("movehighlight").gameObject.activeSelf == true)
+                                {
+                                    float xpos = hit.collider.gameObject.transform.position.x;
+                                    float ypos = hit.collider.gameObject.transform.position.y;
+                                    Debug.Log(xpos);
+                                    clone.transform.position=new Vector3(xpos,ypos,-2);
+                                    for(int x = 1; x<=41; x++){
+                                        for(int y = 1; y<=31; y++){
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                        }
+                                    }                              
+                                    Destroy(hit.collider.gameObject);
+                                    cost_ = cost2.text;
 
+                                    cost_2 = int.Parse(cost_);
+                                    cost_2 = cost_2 + 3;
+                                    cost_= cost_2.ToString();
+                                    cost2.text = cost_;
+                                    
+                                }
+                            }
+                            else if(clone.name == "Rhino2(Clone)" || clone.name == "Gazelle2(Clone)" || clone.name == "Rabbit2(Clone)" || clone.name == "Cheetah2(Clone)" || clone.name == "Hyena2(Clone)" || clone.name == "Hippo2(Clone)" || clone.name == "Croco2(Clone)")
+                            {
+                                if(GameObject.Find(tile.name).transform.Find("movehighlight").gameObject.activeSelf == true)
+                                {
+                                    float xpos = hit.collider.gameObject.transform.position.x;
+                                    float ypos = hit.collider.gameObject.transform.position.y;
+                                    Debug.Log(xpos);
+                                    clone.transform.position=new Vector3(xpos,ypos,-2);
+                                    for(int x = 1; x<=41; x++){
+                                        for(int y = 1; y<=31; y++){
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                        }
+                                    }                              
+                                    Destroy(clone);
+                                    
+                                }
+                            }
+                            else if(clone.name == "Giaffe2(Clone)")
+                            {
+                                if(GameObject.Find(tile.name).transform.Find("movehighlight").gameObject.activeSelf == true)
+                                {
+                                    float xpos = hit.collider.gameObject.transform.position.x;
+                                    float ypos = hit.collider.gameObject.transform.position.y;
+                                    Debug.Log(xpos);
+                                    clone.transform.position=new Vector3(xpos,ypos,-2);
+                                    for(int x = 1; x<=41; x++){
+                                        for(int y = 1; y<=31; y++){
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                        }
+                                    }                              
+                                    Destroy(hit.collider.gameObject);
+                                    
+                                }
+                            }
                         }            
                     }
                     else if(hit.collider.gameObject.name == "Lion2(Clone)"){
                         if(battle_info.text == "Player1 Turn"){
+                            if(clone.name == "Lion(Clone)" || clone.name == "Snake(Clone)")
+                            {
+                                if(GameObject.Find(tile.name).transform.Find("movehighlight").gameObject.activeSelf == true)
+                                {
+                                    float xpos = hit.collider.gameObject.transform.position.x;
+                                    float ypos = hit.collider.gameObject.transform.position.y;
+                                    Debug.Log(xpos);
+                                    clone.transform.position=new Vector3(xpos,ypos,-2);
+                                    for(int x = 1; x<=41; x++){
+                                        for(int y = 1; y<=31; y++){
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                        }
+                                    }
+                                    
+                                    
+                                    Destroy(clone);
+                                    Destroy(hit.collider.gameObject);
+                                }
+                            }
+                            else if(clone.name == "Eagle(Clone)")
+                            {
+                                if(GameObject.Find(tile.name).transform.Find("movehighlight").gameObject.activeSelf == true)
+                                {
+                                    float xpos = hit.collider.gameObject.transform.position.x;
+                                    float ypos = hit.collider.gameObject.transform.position.y;
+                                    Debug.Log(xpos);
+                                    clone.transform.position=new Vector3(xpos,ypos,-2);
+                                    for(int x = 1; x<=41; x++){
+                                        for(int y = 1; y<=31; y++){
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                        }
+                                    }                              
+                                    Destroy(hit.collider.gameObject);
+                                    cost_ = cost1.text;
 
+                                    cost_1 = int.Parse(cost_);
+                                    cost_1 = cost_1 + 3;
+                                    cost_= cost_1.ToString();
+                                    cost1.text = cost_;
+                                    
+                                }
+                            }
+                            else if(clone.name == "Rhino(Clone)" || clone.name == "Gazelle(Clone)" || clone.name == "Rabiit(Clone)" || clone.name == "Cheetah(Clone)" || clone.name == "Hyena(Clone)" || clone.name == "Hippo(Clone)" || clone.name == "Croco(Clone)")
+                            {
+                                if(GameObject.Find(tile.name).transform.Find("movehighlight").gameObject.activeSelf == true)
+                                {
+                                    float xpos = hit.collider.gameObject.transform.position.x;
+                                    float ypos = hit.collider.gameObject.transform.position.y;
+                                    Debug.Log(xpos);
+                                    clone.transform.position=new Vector3(xpos,ypos,-2);
+                                    for(int x = 1; x<=41; x++){
+                                        for(int y = 1; y<=31; y++){
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                        }
+                                    }                              
+                                    Destroy(clone);
+                                    
+                                }
+                            }
+                            else if(clone.name == "Giaffe(Clone)")
+                            {
+                                if(GameObject.Find(tile.name).transform.Find("movehighlight").gameObject.activeSelf == true)
+                                {
+                                    float xpos = hit.collider.gameObject.transform.position.x;
+                                    float ypos = hit.collider.gameObject.transform.position.y;
+                                    Debug.Log(xpos);
+                                    clone.transform.position=new Vector3(xpos,ypos,-2);
+                                    for(int x = 1; x<=41; x++){
+                                        for(int y = 1; y<=31; y++){
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                        }
+                                    }                              
+                                    Destroy(hit.collider.gameObject);
+                                    
+                                }
+                            }
                         }
                         else if(battle_info.text == "Player2 Turn"){
+                            for(int x = 1; x<=41; x++){
+                                for(int y = 1; y<=31; y++){
+                                    GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                }
+                            }
                         clone = hit.collider.gameObject;
                         string name = tile.name;
                         char sp = ' ';
@@ -1743,6 +2795,11 @@ public class MouseV : MonoBehaviour
                     }
                     else if(hit.collider.gameObject.name == "Eagle(Clone)"){
                         if(battle_info.text == "Player1 Turn"){
+                            for(int x = 1; x<=41; x++){
+                                for(int y = 1; y<=31; y++){
+                                    GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                }
+                            }
                         clone = hit.collider.gameObject;
                         string name = tile.name;
                         char sp = ' ';
@@ -1897,14 +2954,169 @@ public class MouseV : MonoBehaviour
                         }             
                         }
                         else if(battle_info.text == "Player2 Turn"){
+                            if(clone.name == "Eagle2(Clone)" || clone.name == "Snake2(Clone)")
+                            {
+                                if(GameObject.Find(tile.name).transform.Find("movehighlight").gameObject.activeSelf == true)
+                                {
+                                    float xpos = hit.collider.gameObject.transform.position.x;
+                                    float ypos = hit.collider.gameObject.transform.position.y;
+                                    Debug.Log(xpos);
+                                    clone.transform.position=new Vector3(xpos,ypos,-2);
+                                    for(int x = 1; x<=41; x++){
+                                        for(int y = 1; y<=31; y++){
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                        }
+                                    }
+                                    
+                                    
+                                    Destroy(clone);
+                                    Destroy(hit.collider.gameObject);
+                                }
+                            }
+                            else if(clone.name == "Lion2(Clone)")
+                            {
+                                if(GameObject.Find(tile.name).transform.Find("movehighlight").gameObject.activeSelf == true)
+                                {
+                                    float xpos = hit.collider.gameObject.transform.position.x;
+                                    float ypos = hit.collider.gameObject.transform.position.y;
+                                    Debug.Log(xpos);
+                                    clone.transform.position=new Vector3(xpos,ypos,-2);
+                                    for(int x = 1; x<=41; x++){
+                                        for(int y = 1; y<=31; y++){
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                        }
+                                    }                              
+                                    Destroy(hit.collider.gameObject);
+                                    cost_ = cost2.text;
 
+                                    cost_2 = int.Parse(cost_);
+                                    cost_2 = cost_2 + 5;
+                                    cost_= cost_2.ToString();
+                                    cost2.text = cost_;
+                                    
+                                }
+                            }
+                            else if(clone.name == "Rhino2(Clone)" || clone.name == "Gazelle2(Clone)" || clone.name == "Rabbit2(Clone)" || clone.name == "Cheetah2(Clone)" || clone.name == "Hyena2(Clone)" || clone.name == "Hippo2(Clone)" || clone.name == "Croco2(Clone)")
+                            {
+                                if(GameObject.Find(tile.name).transform.Find("movehighlight").gameObject.activeSelf == true)
+                                {
+                                    float xpos = hit.collider.gameObject.transform.position.x;
+                                    float ypos = hit.collider.gameObject.transform.position.y;
+                                    Debug.Log(xpos);
+                                    clone.transform.position=new Vector3(xpos,ypos,-2);
+                                    for(int x = 1; x<=41; x++){
+                                        for(int y = 1; y<=31; y++){
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                        }
+                                    }                              
+                                    Destroy(clone);
+                                    
+                                }
+                            }
+                            else if(clone.name == "Giaffe2(Clone)")
+                            {
+                                if(GameObject.Find(tile.name).transform.Find("movehighlight").gameObject.activeSelf == true)
+                                {
+                                    float xpos = hit.collider.gameObject.transform.position.x;
+                                    float ypos = hit.collider.gameObject.transform.position.y;
+                                    Debug.Log(xpos);
+                                    clone.transform.position=new Vector3(xpos,ypos,-2);
+                                    for(int x = 1; x<=41; x++){
+                                        for(int y = 1; y<=31; y++){
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                        }
+                                    }                              
+                                    Destroy(hit.collider.gameObject);
+                                    
+                                }
+                            }
                         }            
                     }
                     else if(hit.collider.gameObject.name == "Eagle2(Clone)"){
                         if(battle_info.text == "Player Turn"){
+                            if(clone.name == "Eagle(Clone)" || clone.name == "Snake(Clone)")
+                            {
+                                if(GameObject.Find(tile.name).transform.Find("movehighlight").gameObject.activeSelf == true)
+                                {
+                                    float xpos = hit.collider.gameObject.transform.position.x;
+                                    float ypos = hit.collider.gameObject.transform.position.y;
+                                    Debug.Log(xpos);
+                                    clone.transform.position=new Vector3(xpos,ypos,-2);
+                                    for(int x = 1; x<=41; x++){
+                                        for(int y = 1; y<=31; y++){
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                        }
+                                    }
+                                    
+                                    
+                                    Destroy(clone);
+                                    Destroy(hit.collider.gameObject);
+                                }
+                            }
+                            else if(clone.name == "Lion(Clone)")
+                            {
+                                if(GameObject.Find(tile.name).transform.Find("movehighlight").gameObject.activeSelf == true)
+                                {
+                                    float xpos = hit.collider.gameObject.transform.position.x;
+                                    float ypos = hit.collider.gameObject.transform.position.y;
+                                    Debug.Log(xpos);
+                                    clone.transform.position=new Vector3(xpos,ypos,-2);
+                                    for(int x = 1; x<=41; x++){
+                                        for(int y = 1; y<=31; y++){
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                        }
+                                    }                              
+                                    Destroy(hit.collider.gameObject);
+                                    cost_ = cost1.text;
 
+                                    cost_1 = int.Parse(cost_);
+                                    cost_1 = cost_1 + 5;
+                                    cost_= cost_1.ToString();
+                                    cost1.text = cost_;
+                                    
+                                }
+                            }
+                            else if(clone.name == "Rhino(Clone)" || clone.name == "Gazelle(Clone)" || clone.name == "Rabiit(Clone)" || clone.name == "Cheetah(Clone)" || clone.name == "Hyena(Clone)" || clone.name == "Hippo(Clone)" || clone.name == "Croco(Clone)")
+                            {
+                                if(GameObject.Find(tile.name).transform.Find("movehighlight").gameObject.activeSelf == true)
+                                {
+                                    float xpos = hit.collider.gameObject.transform.position.x;
+                                    float ypos = hit.collider.gameObject.transform.position.y;
+                                    Debug.Log(xpos);
+                                    clone.transform.position=new Vector3(xpos,ypos,-2);
+                                    for(int x = 1; x<=41; x++){
+                                        for(int y = 1; y<=31; y++){
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                        }
+                                    }                              
+                                    Destroy(clone);
+                                    
+                                }
+                            }
+                            else if(clone.name == "Giaffe(Clone)")
+                            {
+                                if(GameObject.Find(tile.name).transform.Find("movehighlight").gameObject.activeSelf == true)
+                                {
+                                    float xpos = hit.collider.gameObject.transform.position.x;
+                                    float ypos = hit.collider.gameObject.transform.position.y;
+                                    Debug.Log(xpos);
+                                    clone.transform.position=new Vector3(xpos,ypos,-2);
+                                    for(int x = 1; x<=41; x++){
+                                        for(int y = 1; y<=31; y++){
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                        }
+                                    }                              
+                                    Destroy(hit.collider.gameObject);
+                                    
+                                }
+                            }
                         }
                         else if(battle_info.text == "Player2 Turn"){
+                            for(int x = 1; x<=41; x++){
+                                for(int y = 1; y<=31; y++){
+                                    GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                }
+                            }
                         clone = hit.collider.gameObject;
                         string name = tile.name;
                         char sp = ' ';
@@ -2061,6 +3273,11 @@ public class MouseV : MonoBehaviour
                     }
                     else if(hit.collider.gameObject.name == "Cheetah(Clone)"){
                         if(battle_info.text == "Player1 Turn"){
+                            for(int x = 1; x<=41; x++){
+                                for(int y = 1; y<=31; y++){
+                                    GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                }
+                            }
                         clone = hit.collider.gameObject;
                         string name = tile.name;
                         char sp = ' ';
@@ -2215,14 +3432,169 @@ public class MouseV : MonoBehaviour
                         }             
                         }
                         else if(battle_info.text == "Player2 Turn"){
+                            if(clone.name == "Cheetah2(Clone)" || clone.name == "Snake2(Clone)")
+                            {
+                                if(GameObject.Find(tile.name).transform.Find("movehighlight").gameObject.activeSelf == true)
+                                {
+                                    float xpos = hit.collider.gameObject.transform.position.x;
+                                    float ypos = hit.collider.gameObject.transform.position.y;
+                                    Debug.Log(xpos);
+                                    clone.transform.position=new Vector3(xpos,ypos,-2);
+                                    for(int x = 1; x<=41; x++){
+                                        for(int y = 1; y<=31; y++){
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                        }
+                                    }
+                                    
+                                    
+                                    Destroy(clone);
+                                    Destroy(hit.collider.gameObject);
+                                }
+                            }
+                            else if(clone.name == "Lion2(Clone)" || clone.name == "Eagle2(Clone)")
+                            {
+                                if(GameObject.Find(tile.name).transform.Find("movehighlight").gameObject.activeSelf == true)
+                                {
+                                    float xpos = hit.collider.gameObject.transform.position.x;
+                                    float ypos = hit.collider.gameObject.transform.position.y;
+                                    Debug.Log(xpos);
+                                    clone.transform.position=new Vector3(xpos,ypos,-2);
+                                    for(int x = 1; x<=41; x++){
+                                        for(int y = 1; y<=31; y++){
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                        }
+                                    }                              
+                                    Destroy(hit.collider.gameObject);
+                                    cost_ = cost2.text;
 
+                                    cost_2 = int.Parse(cost_);
+                                    cost_2 = cost_2 + 4;
+                                    cost_= cost_2.ToString();
+                                    cost2.text = cost_;
+                                    
+                                }
+                            }
+                            else if(clone.name == "Rhino2(Clone)" || clone.name == "Gazelle2(Clone)" || clone.name == "Rabbit2(Clone)" || clone.name == "Hyena2(Clone)" || clone.name == "Hippo2(Clone)" || clone.name == "Croco2(Clone)")
+                            {
+                                if(GameObject.Find(tile.name).transform.Find("movehighlight").gameObject.activeSelf == true)
+                                {
+                                    float xpos = hit.collider.gameObject.transform.position.x;
+                                    float ypos = hit.collider.gameObject.transform.position.y;
+                                    Debug.Log(xpos);
+                                    clone.transform.position=new Vector3(xpos,ypos,-2);
+                                    for(int x = 1; x<=41; x++){
+                                        for(int y = 1; y<=31; y++){
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                        }
+                                    }                              
+                                    Destroy(clone);
+                                    
+                                }
+                            }
+                            else if(clone.name == "Giaffe2(Clone)")
+                            {
+                                if(GameObject.Find(tile.name).transform.Find("movehighlight").gameObject.activeSelf == true)
+                                {
+                                    float xpos = hit.collider.gameObject.transform.position.x;
+                                    float ypos = hit.collider.gameObject.transform.position.y;
+                                    Debug.Log(xpos);
+                                    clone.transform.position=new Vector3(xpos,ypos,-2);
+                                    for(int x = 1; x<=41; x++){
+                                        for(int y = 1; y<=31; y++){
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                        }
+                                    }                              
+                                    Destroy(hit.collider.gameObject);
+                                    
+                                }
+                            }
                         }            
                     }
                     else if(hit.collider.gameObject.name == "Cheetah2(Clone)"){
                         if(battle_info.text == "Player1 Turn"){
+                            if(clone.name == "Cheetah(Clone)" || clone.name == "Snake(Clone)")
+                            {
+                                if(GameObject.Find(tile.name).transform.Find("movehighlight").gameObject.activeSelf == true)
+                                {
+                                    float xpos = hit.collider.gameObject.transform.position.x;
+                                    float ypos = hit.collider.gameObject.transform.position.y;
+                                    Debug.Log(xpos);
+                                    clone.transform.position=new Vector3(xpos,ypos,-2);
+                                    for(int x = 1; x<=41; x++){
+                                        for(int y = 1; y<=31; y++){
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                        }
+                                    }
+                                    
+                                    
+                                    Destroy(clone);
+                                    Destroy(hit.collider.gameObject);
+                                }
+                            }
+                            else if(clone.name == "Lion(Clone)" || clone.name == "Eagle(Clone)")
+                            {
+                                if(GameObject.Find(tile.name).transform.Find("movehighlight").gameObject.activeSelf == true)
+                                {
+                                    float xpos = hit.collider.gameObject.transform.position.x;
+                                    float ypos = hit.collider.gameObject.transform.position.y;
+                                    Debug.Log(xpos);
+                                    clone.transform.position=new Vector3(xpos,ypos,-2);
+                                    for(int x = 1; x<=41; x++){
+                                        for(int y = 1; y<=31; y++){
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                        }
+                                    }                              
+                                    Destroy(hit.collider.gameObject);
+                                    cost_ = cost1.text;
 
+                                    cost_1 = int.Parse(cost_);
+                                    cost_1 = cost_1 + 4;
+                                    cost_= cost_1.ToString();
+                                    cost1.text = cost_;
+                                    
+                                }
+                            }
+                            else if(clone.name == "Rhino(Clone)" || clone.name == "Gazelle(Clone)" || clone.name == "Rabiit(Clone)" || clone.name == "Hyena(Clone)" || clone.name == "Hippo(Clone)" || clone.name == "Croco(Clone)")
+                            {
+                                if(GameObject.Find(tile.name).transform.Find("movehighlight").gameObject.activeSelf == true)
+                                {
+                                    float xpos = hit.collider.gameObject.transform.position.x;
+                                    float ypos = hit.collider.gameObject.transform.position.y;
+                                    Debug.Log(xpos);
+                                    clone.transform.position=new Vector3(xpos,ypos,-2);
+                                    for(int x = 1; x<=41; x++){
+                                        for(int y = 1; y<=31; y++){
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                        }
+                                    }                              
+                                    Destroy(clone);
+                                    
+                                }
+                            }
+                            else if(clone.name == "Giaffe(Clone)")
+                            {
+                                if(GameObject.Find(tile.name).transform.Find("movehighlight").gameObject.activeSelf == true)
+                                {
+                                    float xpos = hit.collider.gameObject.transform.position.x;
+                                    float ypos = hit.collider.gameObject.transform.position.y;
+                                    Debug.Log(xpos);
+                                    clone.transform.position=new Vector3(xpos,ypos,-2);
+                                    for(int x = 1; x<=41; x++){
+                                        for(int y = 1; y<=31; y++){
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                        }
+                                    }                              
+                                    Destroy(hit.collider.gameObject);
+                                    
+                                }
+                            }
                         }
                         else if(battle_info.text == "Player2 Turn"){
+                            for(int x = 1; x<=41; x++){
+                                for(int y = 1; y<=31; y++){
+                                    GameObject.Find($"Tile {x} {y}").transform.Find("movehighlight").gameObject.SetActive(false);
+                                }
+                            }
                         clone = hit.collider.gameObject;
                         string name = tile.name;
                         char sp = ' ';
