@@ -6,176 +6,140 @@ using UnityEngine.UI;
 public class OnSpawnTile : MonoBehaviour
 {
     public Text battle_info;
-    public void TurnOnSpawnTiles()
+    public Text cost1;
+    public Text cost2;
+    int cost_;
+    string cost;
+    public GameObject Cannot;
+    int a;
+    public void CannotClick()
     {
-        GameObject.Find("AnimalCreate_pn").SetActive(false);
-
+        Cannot.SetActive(false);
+    }
+    public void Abc(){
         if (battle_info.text == "Player1 Turn")
         {
+            cost = cost1.text;
+            cost_ = int.Parse(cost);
+            cost_ = cost_ - a;
+            cost= cost_.ToString();
+            cost1.text = cost;
+            if(cost_ >= 0){
+            GameObject.Find("AnimalCreate_pn").SetActive(false);
             Tile.tileA();
+            }
+            else if(cost_ < 0){
+                Cannot.SetActive(true);
+                cost = cost1.text;
+                cost_ = int.Parse(cost);
+                cost_ = cost_ + a;
+                cost= cost_.ToString();
+                cost1.text = cost;
+            }
         }
         else if (battle_info.text == "Player2 Turn")
         {
+            cost = cost2.text;
+            cost_ = int.Parse(cost);
+            cost_ = cost_ - a;
+            cost= cost_.ToString();
+            cost2.text = cost;
+            if(cost_ >= 0){
+            GameObject.Find("AnimalCreate_pn").SetActive(false);
             Tile.tileA2();
+            }
+            else if(cost_ < 0){
+                Cannot.SetActive(true);
+                cost = cost2.text;
+                cost_ = int.Parse(cost);
+                cost_ = cost_ + a;
+                cost= cost_.ToString();
+                cost2.text = cost;
+            }
         }
+    }
+    public void TurnOnSpawnTiles()
+    {
+        a = 3;
+        Abc();
         AnimalSpawnManager.tileC();
     }
 
     public void TurnOnSpawnTiles_Gazelle()
     {
-        GameObject.Find("AnimalCreate_pn").SetActive(false);
-
-        if (battle_info.text == "Player1 Turn")
-        {
-            Tile.tileA();
-        }
-        else if (battle_info.text == "Player2 Turn")
-        {
-            Tile.tileA2();
-        }
+        a = 6;
+        Abc();
 
         AnimalSpawnManager.tileE();
     }
 
     public void TurnOnSpawnTiles_Hyena()
     {
-        GameObject.Find("AnimalCreate_pn").SetActive(false);
-
-        if (battle_info.text == "Player1 Turn")
-        {
-            Tile.tileA();
-        }
-        else if (battle_info.text == "Player2 Turn")
-        {
-            Tile.tileA2();
-        }
+        a = 2;
+        Abc();
 
         AnimalSpawnManager.tileF();
     }
 
     public void TurnOnSpawnTiles_Croco()
     {
-        GameObject.Find("AnimalCreate_pn").SetActive(false);
-
-        if (battle_info.text == "Player1 Turn")
-        {
-            Tile.tileA();
-        }
-        else if (battle_info.text == "Player2 Turn")
-        {
-            Tile.tileA2();
-        }
+        a = 4;
+        Abc();
 
         AnimalSpawnManager.tileG();
     }
 
     public void TurnOnSpawnTiles_Cheetah()
     {
-        GameObject.Find("AnimalCreate_pn").SetActive(false);
-
-        if (battle_info.text == "Player1 Turn")
-        {
-            Tile.tileA();
-        }
-        else if (battle_info.text == "Player2 Turn")
-        {
-            Tile.tileA2();
-        }
+        a = 10;
+        Abc();
 
         AnimalSpawnManager.tileH();
     }
 
     public void TurnOnSpawnTiles_Hippo()
     {
-        GameObject.Find("AnimalCreate_pn").SetActive(false);
-
-        if (battle_info.text == "Player1 Turn")
-        {
-            Tile.tileA();
-        }
-        else if (battle_info.text == "Player2 Turn")
-        {
-            Tile.tileA2();
-        }
+        a = 8;
+        Abc();
 
         AnimalSpawnManager.tileI();
     }
 
     public void TurnOnSpawnTiles_Rhino()
     {
-        GameObject.Find("AnimalCreate_pn").SetActive(false);
-
-        if (battle_info.text == "Player1 Turn")
-        {
-            Tile.tileA();
-        }
-        else if (battle_info.text == "Player2 Turn")
-        {
-            Tile.tileA2();
-        }
+        a = 6;
+        Abc();
 
         AnimalSpawnManager.tileJ();
     }
 
     public void TurnOnSpawnTiles_Snake()
     {
-        GameObject.Find("AnimalCreate_pn").SetActive(false);
-
-        if (battle_info.text == "Player1 Turn")
-        {
-            Tile.tileA();
-        }
-        else if (battle_info.text == "Player2 Turn")
-        {
-            Tile.tileA2();
-        }
+        a = 8;
+        Abc();
 
         AnimalSpawnManager.tileK();
     }
 
     public void TurnOnSpawnTiles_Lion()
     {
-        GameObject.Find("AnimalCreate_pn").SetActive(false);
-
-        if (battle_info.text == "Player1 Turn")
-        {
-            Tile.tileA();
-        }
-        else if (battle_info.text == "Player2 Turn")
-        {
-            Tile.tileA2();
-        }
+        a = 8;
+        Abc();
 
         AnimalSpawnManager.tileL();
     }
 
     public void TurnOnSpawnTiles_Eagle()
     {
-        GameObject.Find("AnimalCreate_pn").SetActive(false);
-
-        if (battle_info.text == "Player1 Turn")
-        {
-            Tile.tileA();
-        }
-        else if (battle_info.text == "Player2 Turn")
-        {
-            Tile.tileA2();
-        }
+        a = 12;
+        Abc();
 
         AnimalSpawnManager.tileN();
     }
     public void TurnOnSpawnTiles_Giraffe()
     {
-        GameObject.Find("AnimalCreate_pn").SetActive(false);
-
-        if (battle_info.text == "Player1 Turn")
-        {
-            Tile.tileA();
-        }
-        else if (battle_info.text == "Player2 Turn")
-        {
-            Tile.tileA2();
-        }
+        a = 8;
+        Abc();
 
         AnimalSpawnManager.tileM();
     }
