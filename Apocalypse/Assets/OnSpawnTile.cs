@@ -18,7 +18,7 @@ public class OnSpawnTile : MonoBehaviour
         {
             Tile.tileA2();
         }
-        Tile.tileC();
+        AnimalSpawnManager.tileC();
     }
 
     public void TurnOnSpawnTiles_Gazelle()
@@ -34,7 +34,7 @@ public class OnSpawnTile : MonoBehaviour
             Tile.tileA2();
         }
 
-        Tile.tileE();
+        AnimalSpawnManager.tileE();
     }
 
     public void TurnOnSpawnTiles_Hyena()
@@ -50,7 +50,7 @@ public class OnSpawnTile : MonoBehaviour
             Tile.tileA2();
         }
 
-        Tile.tileF();
+        AnimalSpawnManager.tileF();
     }
 
     public void TurnOnSpawnTiles_Croco()
@@ -66,7 +66,7 @@ public class OnSpawnTile : MonoBehaviour
             Tile.tileA2();
         }
 
-        Tile.tileG();
+        AnimalSpawnManager.tileG();
     }
 
     public void TurnOnSpawnTiles_Cheetah()
@@ -82,7 +82,7 @@ public class OnSpawnTile : MonoBehaviour
             Tile.tileA2();
         }
 
-        Tile.tileH();
+        AnimalSpawnManager.tileH();
     }
 
     public void TurnOnSpawnTiles_Hippo()
@@ -98,7 +98,7 @@ public class OnSpawnTile : MonoBehaviour
             Tile.tileA2();
         }
 
-        Tile.tileI();
+        AnimalSpawnManager.tileI();
     }
 
     public void TurnOnSpawnTiles_Rhino()
@@ -114,7 +114,7 @@ public class OnSpawnTile : MonoBehaviour
             Tile.tileA2();
         }
 
-        Tile.tileJ();
+        AnimalSpawnManager.tileJ();
     }
 
     public void TurnOnSpawnTiles_Snake()
@@ -130,7 +130,7 @@ public class OnSpawnTile : MonoBehaviour
             Tile.tileA2();
         }
 
-        Tile.tileK();
+        AnimalSpawnManager.tileK();
     }
 
     public void TurnOnSpawnTiles_Lion()
@@ -146,7 +146,7 @@ public class OnSpawnTile : MonoBehaviour
             Tile.tileA2();
         }
 
-        Tile.tileL();
+        AnimalSpawnManager.tileL();
     }
 
     public void TurnOnSpawnTiles_Eagle()
@@ -162,7 +162,7 @@ public class OnSpawnTile : MonoBehaviour
             Tile.tileA2();
         }
 
-        Tile.tileN();
+        AnimalSpawnManager.tileN();
     }
     public void TurnOnSpawnTiles_Giraffe()
     {
@@ -177,6 +177,6 @@ public class OnSpawnTile : MonoBehaviour
             Tile.tileA2();
         }
 
-        Tile.tileM();
+        AnimalSpawnManager.tileM();
     }
 }

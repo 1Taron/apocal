@@ -1204,7 +1204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _baseColor: {r: 0.21404415, g: 0.6981132, b: 0.22289906, a: 1}
-  _offsetColor: {r: 0.54509807, g: 0.4392157, b: 0.047058824, a: 1}
+  _offsetColor: {r: 0.7264151, g: 0.4453023, b: 0.064417906, a: 1}
   spawnColor: {r: 1, g: 0.89411765, b: 0.07058824, a: 0.8235294}
   _riverColor: {r: 0, g: 0.5019608, b: 1, a: 1}
   _renderer: {fileID: 8863119357689027983}

@@ -829,6 +829,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 312387550}
   m_CullTransparentMesh: 1
+--- !u!1 &358390138
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 358390140}
+  - component: {fileID: 358390139}
+  m_Layer: 0
+  m_Name: AnimalSpawnManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &358390139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 358390138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5f4192f4edf3c8408157cd94458c3a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &358390140
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 358390138}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.0552174, y: 0.1244618, z: -1.2052127}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &401497583
 GameObject:
   m_ObjectHideFlags: 0
@@ -3005,6 +3049,7 @@ MonoBehaviour:
   Animal09: {fileID: 1457367252635600462, guid: 45bef7fe038cd83428276a9b531767f5, type: 3}
   Animal10: {fileID: 4312139895082580228, guid: cf175196068a2fa44af7e2571923eff5, type: 3}
   Animal11: {fileID: 8688545414697433442, guid: 2c804abdbd60bec498b8b57236027e24, type: 3}
+  Animal12: {fileID: 8030133048396186420, guid: 734ceca45b22a964785262d620000325, type: 3}
   C: {fileID: 519420031}
 --- !u!4 &1358927862
 Transform:
@@ -3267,7 +3312,7 @@ MonoBehaviour:
   _width: 42
   _height: 32
   _tilePrefab: {fileID: 4698435829277856361, guid: 5b610632d4cce064da48492c359ede2a, type: 3}
-  _spawntilePrefab: {fileID: 5748764941223400586, guid: ee5a18f95640d7c4a9cc2f22791b0d52, type: 3}
+  _grassPrefab: {fileID: 3810669425277551915, guid: db833e41a88d1b541bda855d38329c07, type: 3}
   _cam: {fileID: 519420032}
 --- !u!4 &1453687182
 Transform:
@@ -3825,6 +3870,7 @@ MonoBehaviour:
   Animal09: {fileID: 1119148465137956976, guid: e46ef3f288b773a48a78426f831c3466, type: 3}
   Animal10: {fileID: 5322163325515089330, guid: ce335520052fec64b8ee59ddaf58e74a, type: 3}
   Animal11: {fileID: 1813013123955132867, guid: ffc26b03972f934459a98c464455018f, type: 3}
+  Animal12: {fileID: 2763247260467547416, guid: 9931352658f58754da478a0c564a5af9, type: 3}
   C: {fileID: 519420031}
 --- !u!4 &1728446438
 Transform:
