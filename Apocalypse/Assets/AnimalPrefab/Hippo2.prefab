@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9022541433759778746}
   m_Layer: 0
   m_Name: Hippo2
-  m_TagString: Untagged
+  m_TagString: Hippo2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

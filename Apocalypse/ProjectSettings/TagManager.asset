@@ -5,6 +5,17 @@ TagManager:
   serializedVersion: 2
   tags:
   - Tile
+  - Grass
+  - Rabbit
+  - Rabbit2
+  - Gazelle
+  - Gazelle2
+  - Rhino
+  - Rhino2
+  - Hippo
+  - Hippo2
+  - Giaffe
+  - Giaffe2
   layers:
   - Default
   - TransparentFX
