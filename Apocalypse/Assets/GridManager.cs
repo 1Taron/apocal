@@ -48,7 +48,7 @@ public class GridManager : MonoBehaviour
                             var _colorValue = 2;
                             if (_colorValue == 2)
                             {
-                                var spawnedGrass = Instantiate(_grassPrefab, new Vector3(xpos, ypos + 0.06f), Quaternion.identity);
+                                var spawnedGrass = Instantiate(_grassPrefab, new Vector3(xpos, ypos + 0.06f, -0.01f), Quaternion.identity);
                                 spawnedGrass.name = $"Grass {x} {y}";
                             }
                             switch (y)
@@ -309,7 +309,7 @@ public class GridManager : MonoBehaviour
                             var _colorValue = 2;
                             if (_colorValue == 2)
                             {
-                                var spawnedGrass = Instantiate(_grassPrefab, new Vector3(xpos, ypos + 0.06f), Quaternion.identity);
+                                var spawnedGrass = Instantiate(_grassPrefab, new Vector3(xpos, ypos + 0.06f, -0.01f), Quaternion.identity);
                                 spawnedGrass.name = $"Grass {x} {y}";
                             }
                             switch (y)
