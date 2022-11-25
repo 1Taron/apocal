@@ -5,9 +5,9 @@ using System;
 
 public class Tile : MonoBehaviour
 {
-    [SerializeField] private Color _baseColor, _offsetColor, spawnColor, _riverColor;
+    [SerializeField] private Sprite _basesprite, _offsetsprite, _spawnsprite, _riversprite;
     [SerializeField] private SpriteRenderer _renderer;
-    [SerializeField] private GameObject _highlight, _spawnable;
+    [SerializeField] private GameObject _highlight;
 
     public static Action tileA;
     public static Action tileB;
@@ -25,16 +25,16 @@ public class Tile : MonoBehaviour
         switch (_colorValue)
         {
             case 1:
-                _renderer.color = _baseColor;
+                _renderer.sprite = _basesprite;
                 break;
             case 2:
-                _renderer.color = _offsetColor;
+                _renderer.sprite = _offsetsprite;
                 break;
             case 3:
-                _renderer.color = spawnColor;
+                _renderer.sprite = _spawnsprite;
                 break;
             case 4:
-                _renderer.color = _riverColor;
+                _renderer.sprite = _riversprite;
                 break;
         }
     }
@@ -55,7 +55,7 @@ public class Tile : MonoBehaviour
         {
             for (float y = 1; y < 6; y++)
             {
-                GameObject.Find($"Tile {x} {y}").GetComponent<SpriteRenderer>().color = spawnColor;
+                GameObject.Find($"Tile {x} {y}").GetComponent<SpriteRenderer>().sprite = _spawnsprite;
             }
         }
     }
@@ -66,7 +66,7 @@ public class Tile : MonoBehaviour
         {
             for (float y = 27; y < 32; y++)
             {
-                GameObject.Find($"Tile {x} {y}").GetComponent<SpriteRenderer>().color = spawnColor;
+                GameObject.Find($"Tile {x} {y}").GetComponent<SpriteRenderer>().sprite = _spawnsprite;
             }
         }
     }
@@ -77,14 +77,14 @@ public class Tile : MonoBehaviour
         {
             for (float y = 1; y < 6; y++)
             {
-                GameObject.Find($"Tile {x} {y}").GetComponent<SpriteRenderer>().color = _offsetColor;
+                GameObject.Find($"Tile {x} {y}").GetComponent<SpriteRenderer>().sprite = _spawnsprite;
             }
         }
         for (float x = 1; x < 6; x++)
         {
             for (float y = 27; y < 32; y++)
             {
-                GameObject.Find($"Tile {x} {y}").GetComponent<SpriteRenderer>().color = _offsetColor;
+                GameObject.Find($"Tile {x} {y}").GetComponent<SpriteRenderer>().sprite = _spawnsprite;
             }
         }
     }

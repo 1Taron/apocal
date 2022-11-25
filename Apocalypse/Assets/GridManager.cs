@@ -21,6 +21,7 @@ public class GridManager : MonoBehaviour
     void Start()
     {
         GenerateGrid();
+        Tile.tileB();
         AnimalSpawnManager.tileD();
         AnimalCreate.eleSpawn1();
         AnimalCreate2.eleSpawn2();
@@ -43,10 +44,11 @@ public class GridManager : MonoBehaviour
                             float xpos = (x - 0.05f * x) + 0.475f;
 
                             var spawnedTile = Instantiate(_tilePrefab, new Vector3(xpos, ypos), Quaternion.identity);
+                            spawnedTile.transform.Rotate(new Vector3(0, 0, 90));
                             spawnedTile.name = $"Tile {x} {y}";
 
-                            var _colorValue = 2;
-                            if (_colorValue == 2)
+                            var _colorValue = 1;
+                            if (_colorValue == 1)
                             {
                                 var spawnedGrass = Instantiate(_grassPrefab, new Vector3(xpos, ypos + 0.06f, -0.01f), Quaternion.identity);
                                 spawnedGrass.name = $"Grass {x} {y}";
@@ -304,10 +306,11 @@ public class GridManager : MonoBehaviour
                             float xpos = x - 0.05f * x;
 
                             var spawnedTile = Instantiate(_tilePrefab, new Vector3(xpos, ypos), Quaternion.identity);
+                            spawnedTile.transform.Rotate(new Vector3(0, 0, 90));
                             spawnedTile.name = $"Tile {x} {y}";
 
-                            var _colorValue = 2;
-                            if (_colorValue == 2)
+                            var _colorValue = 1;
+                            if (_colorValue == 1)
                             {
                                 var spawnedGrass = Instantiate(_grassPrefab, new Vector3(xpos, ypos + 0.06f, -0.01f), Quaternion.identity);
                                 spawnedGrass.name = $"Grass {x} {y}";

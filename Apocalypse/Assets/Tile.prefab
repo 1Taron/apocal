@@ -360,14 +360,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3243261488693220991}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 5114529291043576371}
   m_RootOrder: 12
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!212 &8918501368610382039
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -444,14 +444,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3499624928239555211}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 5114529291043576371}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!212 &3740168970215859553
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1119,9 +1119,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8654327927644415051}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalScale: {x: 0.199, y: 0.199, z: 0.199}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8127014940320851777}
   - {fileID: 8407700201617978297}
@@ -1203,13 +1203,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a87416ca14abb9646938a84d4f47e172, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _baseColor: {r: 0.21404415, g: 0.6981132, b: 0.22289906, a: 1}
-  _offsetColor: {r: 0.7264151, g: 0.4453023, b: 0.064417906, a: 1}
-  spawnColor: {r: 1, g: 0.89411765, b: 0.07058824, a: 0.8235294}
-  _riverColor: {r: 0, g: 0.5019608, b: 1, a: 1}
+  _basesprite: {fileID: -781818487, guid: df4a72564d7a14133932b413a7c564ee, type: 3}
+  _offsetsprite: {fileID: -886511603, guid: c4037e1b0885e4200925d3a8f410b3f0, type: 3}
+  _spawnsprite: {fileID: 1987693588, guid: e3fb4bfee1850477992eaa58082c42e8, type: 3}
+  _riversprite: {fileID: -342222614, guid: fc92294dfb11144e08b5b59505f0cc64, type: 3}
   _renderer: {fileID: 8863119357689027983}
   _highlight: {fileID: 3499624928239555211}
-  _spawnable: {fileID: 0}
 --- !u!61 &2320819223242556342
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1234,5 +1233,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8828125, y: 1}
+  m_Size: {x: 3, y: 3}
   m_EdgeRadius: 0
