@@ -50,8 +50,8 @@ public class GridManager : MonoBehaviour
                             var _colorValue = 1;
                             if (_colorValue == 1)
                             {
-                                var spawnedGrass = Instantiate(_grassPrefab, new Vector3(xpos, ypos + 0.06f, -0.01f), Quaternion.identity);
-                                spawnedGrass.name = $"Grass {x} {y}";
+                                //var spawnedGrass = Instantiate(_grassPrefab, new Vector3(xpos, ypos + 0.06f, -0.01f), Quaternion.identity);
+                                //spawnedGrass.name = $"Grass {x} {y}";
                             }
                             switch (y)
                             {
@@ -62,8 +62,7 @@ public class GridManager : MonoBehaviour
                                         {
                                             _colorValue = 4;
                                             spawnedTile.Init(_colorValue);
-                                            ForDestory = GameObject.Find($"Grass {x} {y}");
-                                            Destroy(ForDestory);
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("Grass").gameObject.SetActive(false);
                                             break;
                                         }
                                         else
@@ -78,8 +77,7 @@ public class GridManager : MonoBehaviour
                                         {
                                             _colorValue = 4;
                                             spawnedTile.Init(_colorValue);
-                                            ForDestory = GameObject.Find($"Grass {x} {y}");
-                                            Destroy(ForDestory);
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("Grass").gameObject.SetActive(false);
                                             break;
                                         }
                                         else
@@ -94,8 +92,7 @@ public class GridManager : MonoBehaviour
                                         {
                                             _colorValue = 4;
                                             spawnedTile.Init(_colorValue);
-                                            ForDestory = GameObject.Find($"Grass {x} {y}");
-                                            Destroy(ForDestory);
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("Grass").gameObject.SetActive(false);
                                             break;
                                         }
                                         else
@@ -110,8 +107,7 @@ public class GridManager : MonoBehaviour
                                         {
                                             _colorValue = 4;
                                             spawnedTile.Init(_colorValue);
-                                            ForDestory = GameObject.Find($"Grass {x} {y}");
-                                            Destroy(ForDestory);
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("Grass").gameObject.SetActive(false);
                                             break;
                                         }
                                         else
@@ -126,8 +122,7 @@ public class GridManager : MonoBehaviour
                                         {
                                             _colorValue = 4;
                                             spawnedTile.Init(_colorValue);
-                                            ForDestory = GameObject.Find($"Grass {x} {y}");
-                                            Destroy(ForDestory);
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("Grass").gameObject.SetActive(false);
                                             break;
                                         }
                                         else
@@ -142,8 +137,7 @@ public class GridManager : MonoBehaviour
                                         {
                                             _colorValue = 4;
                                             spawnedTile.Init(_colorValue);
-                                            ForDestory = GameObject.Find($"Grass {x} {y}");
-                                            Destroy(ForDestory);
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("Grass").gameObject.SetActive(false);
                                             break;
                                         }
                                         else
@@ -158,8 +152,7 @@ public class GridManager : MonoBehaviour
                                         {
                                             _colorValue = 4;
                                             spawnedTile.Init(_colorValue);
-                                            ForDestory = GameObject.Find($"Grass {x} {y}");
-                                            Destroy(ForDestory);
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("Grass").gameObject.SetActive(false);
                                             break;
                                         }
                                         else
@@ -174,8 +167,7 @@ public class GridManager : MonoBehaviour
                                         {
                                             _colorValue = 4;
                                             spawnedTile.Init(_colorValue);
-                                            ForDestory = GameObject.Find($"Grass {x} {y}");
-                                            Destroy(ForDestory);
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("Grass").gameObject.SetActive(false);
                                             break;
                                         }
                                         else
@@ -190,8 +182,7 @@ public class GridManager : MonoBehaviour
                                         {
                                             _colorValue = 4;
                                             spawnedTile.Init(_colorValue);
-                                            ForDestory = GameObject.Find($"Grass {x} {y}");
-                                            Destroy(ForDestory);
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("Grass").gameObject.SetActive(false);
                                             break;
                                         }
                                         else
@@ -206,8 +197,7 @@ public class GridManager : MonoBehaviour
                                         {
                                             _colorValue = 4;
                                             spawnedTile.Init(_colorValue);
-                                            ForDestory = GameObject.Find($"Grass {x} {y}");
-                                            Destroy(ForDestory);
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("Grass").gameObject.SetActive(false);
                                             break;
                                         }
                                         else
@@ -222,8 +212,7 @@ public class GridManager : MonoBehaviour
                                         {
                                             _colorValue = 4;
                                             spawnedTile.Init(_colorValue);
-                                            ForDestory = GameObject.Find($"Grass {x} {y}");
-                                            Destroy(ForDestory);
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("Grass").gameObject.SetActive(false);
                                             break;
                                         }
                                         else
@@ -238,8 +227,7 @@ public class GridManager : MonoBehaviour
                                         {
                                             _colorValue = 4;
                                             spawnedTile.Init(_colorValue);
-                                            ForDestory = GameObject.Find($"Grass {x} {y}");
-                                            Destroy(ForDestory);
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("Grass").gameObject.SetActive(false);
                                             break;
                                         }
                                         else
@@ -254,8 +242,7 @@ public class GridManager : MonoBehaviour
                                         {
                                             _colorValue = 4;
                                             spawnedTile.Init(_colorValue);
-                                            ForDestory = GameObject.Find($"Grass {x} {y}");
-                                            Destroy(ForDestory);
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("Grass").gameObject.SetActive(false);
                                             break;
                                         }
                                         else
@@ -270,8 +257,7 @@ public class GridManager : MonoBehaviour
                                         {
                                             _colorValue = 4;
                                             spawnedTile.Init(_colorValue);
-                                            ForDestory = GameObject.Find($"Grass {x} {y}");
-                                            Destroy(ForDestory);
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("Grass").gameObject.SetActive(false);
                                             break;
                                         }
                                         else
@@ -286,8 +272,7 @@ public class GridManager : MonoBehaviour
                                         {
                                             _colorValue = 4;
                                             spawnedTile.Init(_colorValue);
-                                            ForDestory = GameObject.Find($"Grass {x} {y}");
-                                            Destroy(ForDestory);
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("Grass").gameObject.SetActive(false);
                                             break;
                                         }
                                         else
@@ -312,8 +297,8 @@ public class GridManager : MonoBehaviour
                             var _colorValue = 1;
                             if (_colorValue == 1)
                             {
-                                var spawnedGrass = Instantiate(_grassPrefab, new Vector3(xpos, ypos + 0.06f, -0.01f), Quaternion.identity);
-                                spawnedGrass.name = $"Grass {x} {y}";
+                                //var spawnedGrass = Instantiate(_grassPrefab, new Vector3(xpos, ypos + 0.06f, -0.01f), Quaternion.identity);
+                                //spawnedGrass.name = $"Grass {x} {y}";
                             }
                             switch (y)
                             {
@@ -324,8 +309,7 @@ public class GridManager : MonoBehaviour
                                         {
                                             _colorValue = 4;
                                             spawnedTile.Init(_colorValue);
-                                            ForDestory = GameObject.Find($"Grass {x} {y}");
-                                            Destroy(ForDestory); break;
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("Grass").gameObject.SetActive(false); break;
                                         }
                                         else
                                             break;
@@ -339,8 +323,7 @@ public class GridManager : MonoBehaviour
                                         {
                                             _colorValue = 4;
                                             spawnedTile.Init(_colorValue);
-                                            ForDestory = GameObject.Find($"Grass {x} {y}");
-                                            Destroy(ForDestory); break;
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("Grass").gameObject.SetActive(false); break;
                                         }
                                         else
                                             break;
@@ -354,8 +337,7 @@ public class GridManager : MonoBehaviour
                                         {
                                             _colorValue = 4;
                                             spawnedTile.Init(_colorValue);
-                                            ForDestory = GameObject.Find($"Grass {x} {y}");
-                                            Destroy(ForDestory); break;
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("Grass").gameObject.SetActive(false); break;
                                         }
                                         else
                                             break;
@@ -369,8 +351,7 @@ public class GridManager : MonoBehaviour
                                         {
                                             _colorValue = 4;
                                             spawnedTile.Init(_colorValue);
-                                            ForDestory = GameObject.Find($"Grass {x} {y}");
-                                            Destroy(ForDestory); break;
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("Grass").gameObject.SetActive(false); break;
                                         }
                                         else
                                             break;
@@ -384,8 +365,7 @@ public class GridManager : MonoBehaviour
                                         {
                                             _colorValue = 4;
                                             spawnedTile.Init(_colorValue);
-                                            ForDestory = GameObject.Find($"Grass {x} {y}");
-                                            Destroy(ForDestory); break;
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("Grass").gameObject.SetActive(false); break;
                                         }
                                         else
                                             break;
@@ -399,8 +379,7 @@ public class GridManager : MonoBehaviour
                                         {
                                             _colorValue = 4;
                                             spawnedTile.Init(_colorValue);
-                                            ForDestory = GameObject.Find($"Grass {x} {y}");
-                                            Destroy(ForDestory); break;
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("Grass").gameObject.SetActive(false); break;
                                         }
                                         else
                                             break;
@@ -414,8 +393,7 @@ public class GridManager : MonoBehaviour
                                         {
                                             _colorValue = 4;
                                             spawnedTile.Init(_colorValue);
-                                            ForDestory = GameObject.Find($"Grass {x} {y}");
-                                            Destroy(ForDestory); break;
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("Grass").gameObject.SetActive(false); break;
                                         }
                                         else
                                             break;
@@ -429,8 +407,7 @@ public class GridManager : MonoBehaviour
                                         {
                                             _colorValue = 4;
                                             spawnedTile.Init(_colorValue);
-                                            ForDestory = GameObject.Find($"Grass {x} {y}");
-                                            Destroy(ForDestory); break;
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("Grass").gameObject.SetActive(false); break;
                                         }
                                         else
                                             break;
@@ -444,8 +421,7 @@ public class GridManager : MonoBehaviour
                                         {
                                             _colorValue = 4;
                                             spawnedTile.Init(_colorValue);
-                                            ForDestory = GameObject.Find($"Grass {x} {y}");
-                                            Destroy(ForDestory); break;
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("Grass").gameObject.SetActive(false); break;
                                         }
                                         else
                                             break;
@@ -459,8 +435,7 @@ public class GridManager : MonoBehaviour
                                         {
                                             _colorValue = 4;
                                             spawnedTile.Init(_colorValue);
-                                            ForDestory = GameObject.Find($"Grass {x} {y}");
-                                            Destroy(ForDestory); break;
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("Grass").gameObject.SetActive(false); break;
                                         }
                                         else
                                             break;
@@ -474,8 +449,7 @@ public class GridManager : MonoBehaviour
                                         {
                                             _colorValue = 4;
                                             spawnedTile.Init(_colorValue);
-                                            ForDestory = GameObject.Find($"Grass {x} {y}");
-                                            Destroy(ForDestory); break;
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("Grass").gameObject.SetActive(false); break;
                                         }
                                         else
                                             break;
@@ -489,8 +463,7 @@ public class GridManager : MonoBehaviour
                                         {
                                             _colorValue = 4;
                                             spawnedTile.Init(_colorValue);
-                                            ForDestory = GameObject.Find($"Grass {x} {y}");
-                                            Destroy(ForDestory); break;
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("Grass").gameObject.SetActive(false); break;
                                         }
                                         else
                                             break;
@@ -504,8 +477,7 @@ public class GridManager : MonoBehaviour
                                         {
                                             _colorValue = 4;
                                             spawnedTile.Init(_colorValue);
-                                            ForDestory = GameObject.Find($"Grass {x} {y}");
-                                            Destroy(ForDestory); break;
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("Grass").gameObject.SetActive(false); break;
                                         }
                                         else
                                             break;
@@ -519,8 +491,7 @@ public class GridManager : MonoBehaviour
                                         {
                                             _colorValue = 4;
                                             spawnedTile.Init(_colorValue);
-                                            ForDestory = GameObject.Find($"Grass {x} {y}");
-                                            Destroy(ForDestory); break;
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("Grass").gameObject.SetActive(false); break;
                                         }
                                         else
                                             break;
@@ -534,8 +505,7 @@ public class GridManager : MonoBehaviour
                                         {
                                             _colorValue = 4;
                                             spawnedTile.Init(_colorValue);
-                                            ForDestory = GameObject.Find($"Grass {x} {y}");
-                                            Destroy(ForDestory); break;
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("Grass").gameObject.SetActive(false); break;
                                         }
                                         else
                                             break;
@@ -549,8 +519,7 @@ public class GridManager : MonoBehaviour
                                         {
                                             _colorValue = 4;
                                             spawnedTile.Init(_colorValue);
-                                            ForDestory = GameObject.Find($"Grass {x} {y}");
-                                            Destroy(ForDestory); break;
+                                            GameObject.Find($"Tile {x} {y}").transform.Find("Grass").gameObject.SetActive(false); break;
                                         }
                                         else
                                             break;
@@ -582,20 +551,17 @@ public class GridManager : MonoBehaviour
         {
             for (float y = 1; y < 6; y++)
             {
-                ForDestory = GameObject.Find($"Grass {x} {y}");
-                Destroy(ForDestory);
+                GameObject.Find($"Tile {x} {y}").transform.Find("Grass").gameObject.SetActive(false);
             }
         }
         for (float x = 1; x < 6; x++)
         {
             for (float y = 27; y < 32; y++)
             {
-                ForDestory = GameObject.Find($"Grass {x} {y}");
-                Destroy(ForDestory);
+                GameObject.Find($"Tile {x} {y}").transform.Find("Grass").gameObject.SetActive(false);
             }
         }
     }
-
 
     public Tile GetTileAtPosition(Vector2 pos)
     {

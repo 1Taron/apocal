@@ -12,12 +12,14 @@ public class Tile : MonoBehaviour
     public static Action tileA;
     public static Action tileB;
     public static Action tileA2;
+    public static Action tileGrass;
 
     private void Awake()
     {
         tileA = () => { ChangeSpawnColor(); };
         tileB = () => { ChangeBaseColor(); };
         tileA2 = () => { ChangeSpawnColorPlayer2(); };
+        tileGrass = () => { GrassTileChange(); };
     }
 
     public void Init(int _colorValue)
@@ -89,5 +91,18 @@ public class Tile : MonoBehaviour
         }
     }
 
-
+    void GrassTileChange()
+    {
+        for (float x = 1; x < 42; x++)
+        {
+            for (float y = 1; y < 32; y++)
+            {
+                if (GameObject.Find($"Tile {x} {y}").transform.Find("Grass").gameObject.activeSelf == false && 
+                    GameObject.Find($"Tile {x} {y}").GetComponent<SpriteRenderer>().sprite.name == "hexGrass04_0")
+                {
+                    GameObject.Find($"Tile {x} {y}").GetComponent<SpriteRenderer>().sprite = _offsetsprite;
+                }
+            }
+        }
+    }
 }

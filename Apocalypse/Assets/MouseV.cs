@@ -7274,7 +7274,7 @@ public class MouseV : MonoBehaviour
                             {
                                 float xpos = hit.collider.gameObject.transform.position.x;
                                 float ypos = hit.collider.gameObject.transform.position.y;
-                                Debug.Log(xpos);
+                                //Debug.Log(xpos);
                                 clone.transform.position = new Vector3(xpos, ypos, -2);
                                 for (int x = 1; x <= 41; x++)
                                 {
@@ -7396,7 +7396,7 @@ public class MouseV : MonoBehaviour
                                 {
                                     float xpos = hit.collider.gameObject.transform.position.x;
                                     float ypos = hit.collider.gameObject.transform.position.y;
-                                    Debug.Log(xpos);
+                                    //Debug.Log(xpos);
                                     clone.transform.position = new Vector3(xpos, ypos, -2);
                                     for (int x = 1; x <= 41; x++)
                                     {

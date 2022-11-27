@@ -151,4 +151,15 @@ public class AnimalSpawnManager : MonoBehaviour
             }
         }
     }
+
+    void OnGrass()
+    {
+        for (float x = 1; x < 42; x++)
+        {
+            for (float y = 1; y < 32; y++)
+            {
+                GameObject.Find($"Tile {x} {y}").transform.Find("grass_on/off").gameObject.SetActive(true);
+            }
+        }
+    }
 }
