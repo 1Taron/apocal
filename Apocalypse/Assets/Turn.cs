@@ -25,7 +25,11 @@ public class Turn : MonoBehaviour
     int a;
     int cost_;
     string cost;
-
+    public GameObject Player1Stat, Player2Stat;
+    public Text costname1, costname2, mpname1, mpname2;
+    public GameObject player1hp, player1hpback, player2hp, player2hpback, animalCreatepn;
+    public GameObject animalCreatebtn, turnalarm;
+    public Text turnalarmtxt;
 
     void Start()
     {
@@ -33,7 +37,7 @@ public class Turn : MonoBehaviour
         Debug.Log("<color=white>Start()</color>" + player1_turn);
         Player02.SetActive(false);
         Info();
-        cost1.text = "10";
+        cost1.text = "1000";
         cost2.text = "10";
     }
 
@@ -45,7 +49,7 @@ public class Turn : MonoBehaviour
     public void OnClickEndTurn()
     {
         TurnChanged(player1_turn);
-        Player1_MoveCost.text = "10";
+        Player1_MoveCost.text = "100";
         Player2_MoveCost.text = "10";
     }
 
@@ -334,6 +338,7 @@ public class Turn : MonoBehaviour
         }
 
         Tile.tileGrass();
+        animalCreatepn.SetActive(false);
         turn = !turn;
         player1_turn = turn;
         Info();
@@ -350,13 +355,75 @@ public class Turn : MonoBehaviour
             battle_info.text = "Player1 Turn";
             Player01.SetActive(true);
             Player02.SetActive(false);
+            _player1status();
         }
         else
         {
             battle_info.text = "Player2 Turn";
             Player01.SetActive(false);
             Player02.SetActive(true);
+            _player2status();
         }
     }
 
+    void _player2status()
+    {
+        Player1Stat.GetComponent<Image>().color = new Color(255 / 255f, 255 / 255f, 255 / 255f, 128 / 255f);
+        costname1.color = new Color(50 / 255f, 50 / 255f, 50 / 255f, 128 / 255f);
+        mpname1.color = new Color(50 / 255f, 50 / 255f, 50 / 255f, 128 / 255f);
+        cost1.color = new Color(50 / 255f, 50 / 255f, 50 / 255f, 128 / 255f);
+        Player1_MoveCost.color = new Color(50 / 255f, 50 / 255f, 50 / 255f, 128 / 255f);
+        player1hp.GetComponent<Image>().color = new Color(164 / 255f, 16 / 255f, 16 / 255f, 128 / 255f);
+        player1hpback.GetComponent<Image>().color = new Color(255 / 255f, 255 / 255f, 255 / 255f, 128 / 255f);
+
+        Player2Stat.GetComponent<Image>().color = new Color(255 / 255f, 255 / 255f, 255 / 255f, 255 / 255f);
+        costname2.color = new Color(50 / 255f, 50 / 255f, 50 / 255f, 255 / 255f);
+        mpname2.color = new Color(50 / 255f, 50 / 255f, 50 / 255f, 255 / 255f);
+        cost2.color = new Color(50 / 255f, 50 / 255f, 50 / 255f, 255 / 255f);
+        Player2_MoveCost.color = new Color(50 / 255f, 50 / 255f, 50 / 255f, 255 / 255f);
+        player2hp.GetComponent<Image>().color = new Color(164 / 255f, 16 / 255f, 16 / 255f, 255 / 255f);
+        player2hpback.GetComponent<Image>().color = new Color(255 / 255f, 255 / 255f, 255 / 255f, 255 / 255f);
+
+        animalCreatebtn.GetComponent<RectTransform>().anchoredPosition = new Vector3(-1838, 824, 0);
+    }
+
+    void _player1status()
+    {
+        Player2Stat.GetComponent<Image>().color = new Color(255 / 255f, 255 / 255f, 255 / 255f, 128 / 255f);
+        costname2.color = new Color(50 / 255f, 50 / 255f, 50 / 255f, 128 / 255f);
+        mpname2.color = new Color(50 / 255f, 50 / 255f, 50 / 255f, 128 / 255f);
+        cost2.color = new Color(50 / 255f, 50 / 255f, 50 / 255f, 128 / 255f);
+        Player2_MoveCost.color = new Color(50 / 255f, 50 / 255f, 50 / 255f, 128 / 255f);
+        player2hp.GetComponent<Image>().color = new Color(164 / 255f, 16 / 255f, 16 / 255f, 128 / 255f);
+        player2hpback.GetComponent<Image>().color = new Color(255 / 255f, 255 / 255f, 255 / 255f, 128 / 255f);
+
+        Player1Stat.GetComponent<Image>().color = new Color(255 / 255f, 255 / 255f, 255 / 255f, 255 / 255f);
+        costname1.color = new Color(50 / 255f, 50 / 255f, 50 / 255f, 255 / 255f);
+        mpname1.color = new Color(50 / 255f, 50 / 255f, 50 / 255f, 255 / 255f);
+        cost1.color = new Color(50 / 255f, 50 / 255f, 50 / 255f, 255 / 255f);
+        Player1_MoveCost.color = new Color(50 / 255f, 50 / 255f, 50 / 255f, 255 / 255f);
+        player1hp.GetComponent<Image>().color = new Color(164 / 255f, 16 / 255f, 16 / 255f, 255 / 255f);
+        player1hpback.GetComponent<Image>().color = new Color(255 / 255f, 255 / 255f, 255 / 255f, 255 / 255f);
+
+        animalCreatebtn.GetComponent<RectTransform>().anchoredPosition = new Vector3(-64, 44, 0);
+    }
+
+    public void turnchangealarm()
+    {
+        if(battle_info.text == "Player1 Turn")
+        {
+            turnalarmtxt.text = "Player 1 Turn!";
+        }
+        else if(battle_info.text == "Player2 Turn")
+        {
+            turnalarmtxt.text = "Player 2 Turn!";
+        }
+        turnalarm.SetActive(true);
+        Invoke("turnchangealarmoff", 1.2f);
+    }
+
+    void turnchangealarmoff()
+    {
+        turnalarm.SetActive(false);
+    }
 }

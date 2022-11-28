@@ -47,76 +47,76 @@ public class AnimalCreate : MonoBehaviour
                         CreateAnimal_();
                         break;
                     case "Tile 41 2":
-                        CreateAnimal_();
+                        CreateAnimal_(); 
                         break;
                     case "Tile 41 3":
-                        CreateAnimal_();
+                        CreateAnimal_(); 
                         break;
                     case "Tile 41 4":
-                        CreateAnimal_();
+                        CreateAnimal_(); 
                         break;
                     case "Tile 41 5":
-                        CreateAnimal_();
+                        CreateAnimal_(); 
                         break;
                     case "Tile 37 1":
-                        CreateAnimal_();
+                        CreateAnimal_(); 
                         break;
                     case "Tile 37 2":
                         CreateAnimal_();
                         break;
                     case "Tile 37 3":
-                        CreateAnimal_();
+                        CreateAnimal_(); 
                         break;
                     case "Tile 37 4":
-                        CreateAnimal_();
+                        CreateAnimal_(); 
                         break;
                     case "Tile 37 5":
-                        CreateAnimal_();
+                        CreateAnimal_(); 
                         break;
                     case "Tile 38 1":
-                        CreateAnimal_();
+                        CreateAnimal_(); 
                         break;
                     case "Tile 38 2":
-                        CreateAnimal_();
+                        CreateAnimal_(); 
                         break;
                     case "Tile 38 3":
-                        CreateAnimal_();
+                        CreateAnimal_(); 
                         break;
                     case "Tile 38 4":
-                        CreateAnimal_();
+                        CreateAnimal_(); 
                         break;
                     case "Tile 38 5":
-                        CreateAnimal_();
+                        CreateAnimal_(); 
                         break;
                     case "Tile 39 1":
-                        CreateAnimal_();
+                        CreateAnimal_(); 
                         break;
                     case "Tile 39 2":
-                        CreateAnimal_();
+                        CreateAnimal_(); 
                         break;
                     case "Tile 39 3":
-                        CreateAnimal_();
+                        CreateAnimal_(); 
                         break;
                     case "Tile 39 4":
                         CreateAnimal_();
                         break;
                     case "Tile 39 5":
-                        CreateAnimal_();
+                        CreateAnimal_(); 
                         break;
                     case "Tile 40 1":
-                        CreateAnimal_();
+                        CreateAnimal_(); 
                         break;
                     case "Tile 40 2":
-                        CreateAnimal_();
+                        CreateAnimal_(); 
                         break;
                     case "Tile 40 3":
-                        CreateAnimal_();
+                        CreateAnimal_(); 
                         break;
                     case "Tile 40 4":
-                        CreateAnimal_();
+                        CreateAnimal_(); 
                         break;
                     case "Tile 40 5":
-                        CreateAnimal_();
+                        CreateAnimal_(); 
                         break;
                     default:
                         //WarningMessage();
@@ -138,67 +138,67 @@ public class AnimalCreate : MonoBehaviour
         {
             xpos = GameObject.Find(strtile).transform.position.x;
             ypos = GameObject.Find(strtile).transform.position.y;
-            _RabbitCreate(); Tile.tileB(); AnimalSpawnManager.tileD();
+            _RabbitCreate(); Tile.tileB(); AnimalSpawnManager.tileD();Tile.tileSpawn2();
         }
         else if (GameObject.Find(strtile).transform.Find("spawnable_gazelle").gameObject.activeSelf == true)
         {
             xpos = GameObject.Find(strtile).transform.position.x;
             ypos = GameObject.Find(strtile).transform.position.y;
-            _GazelleCreate(); Tile.tileB(); AnimalSpawnManager.tileD();
+            _GazelleCreate(); Tile.tileB(); AnimalSpawnManager.tileD(); Tile.tileSpawn2();
         }
         else if (GameObject.Find(strtile).transform.Find("spawnable_hyena").gameObject.activeSelf == true)
         {
             xpos = GameObject.Find(strtile).transform.position.x;
             ypos = GameObject.Find(strtile).transform.position.y;
-            _HyenaCreate(); Tile.tileB(); AnimalSpawnManager.tileD();
+            _HyenaCreate(); Tile.tileB(); AnimalSpawnManager.tileD(); Tile.tileSpawn2();
         }
         else if (GameObject.Find(strtile).transform.Find("spawnable_croco").gameObject.activeSelf == true)
         {
             xpos = GameObject.Find(strtile).transform.position.x;
             ypos = GameObject.Find(strtile).transform.position.y;
-            _CrocoCreate(); Tile.tileB(); AnimalSpawnManager.tileD();
+            _CrocoCreate(); Tile.tileB(); AnimalSpawnManager.tileD(); Tile.tileSpawn2();
         }
         else if (GameObject.Find(strtile).transform.Find("spawnable_cheetah").gameObject.activeSelf == true)
         {
             xpos = GameObject.Find(strtile).transform.position.x;
             ypos = GameObject.Find(strtile).transform.position.y;
-            _CheetahCreate(); Tile.tileB(); AnimalSpawnManager.tileD();
+            _CheetahCreate(); Tile.tileB(); AnimalSpawnManager.tileD(); Tile.tileSpawn2();
         }
         else if (GameObject.Find(strtile).transform.Find("spawnable_hippo").gameObject.activeSelf == true)
         {
             xpos = GameObject.Find(strtile).transform.position.x;
             ypos = GameObject.Find(strtile).transform.position.y;
-            _HippoCreate(); Tile.tileB(); AnimalSpawnManager.tileD();
+            _HippoCreate(); Tile.tileB(); AnimalSpawnManager.tileD(); Tile.tileSpawn2();
         }
         else if (GameObject.Find(strtile).transform.Find("spawnable_rhino").gameObject.activeSelf == true)
         {
             xpos = GameObject.Find(strtile).transform.position.x;
             ypos = GameObject.Find(strtile).transform.position.y;
-            _RhinoCreate(); Tile.tileB(); AnimalSpawnManager.tileD();
+            _RhinoCreate(); Tile.tileB(); AnimalSpawnManager.tileD(); Tile.tileSpawn2();
         }
         else if (GameObject.Find(strtile).transform.Find("spawnable_snake").gameObject.activeSelf == true)
         {
             xpos = GameObject.Find(strtile).transform.position.x;
             ypos = GameObject.Find(strtile).transform.position.y;
-            _SnakeCreate(); Tile.tileB(); AnimalSpawnManager.tileD();
+            _SnakeCreate(); Tile.tileB(); AnimalSpawnManager.tileD(); Tile.tileSpawn2();
         }
         else if (GameObject.Find(strtile).transform.Find("spawnable_lion").gameObject.activeSelf == true)
         {
             xpos = GameObject.Find(strtile).transform.position.x;
             ypos = GameObject.Find(strtile).transform.position.y;
-            _LionCreate(); Tile.tileB(); AnimalSpawnManager.tileD();
+            _LionCreate(); Tile.tileB(); AnimalSpawnManager.tileD(); Tile.tileSpawn2();
         }
         else if (GameObject.Find(strtile).transform.Find("spawnable_eagle").gameObject.activeSelf == true)
         {
             xpos = GameObject.Find(strtile).transform.position.x;
             ypos = GameObject.Find(strtile).transform.position.y;
-            _EagleCreate(); Tile.tileB(); AnimalSpawnManager.tileD();
+            _EagleCreate(); Tile.tileB(); AnimalSpawnManager.tileD(); Tile.tileSpawn2();
         }
         else if (GameObject.Find(strtile).transform.Find("spawnable_giraffe").gameObject.activeSelf == true)
         {
             xpos = GameObject.Find(strtile).transform.position.x;
             ypos = GameObject.Find(strtile).transform.position.y;
-            _GiraffeCreate(); Tile.tileB(); AnimalSpawnManager.tileD();
+            _GiraffeCreate(); Tile.tileB(); AnimalSpawnManager.tileD(); Tile.tileSpawn2();
         }
     }
 

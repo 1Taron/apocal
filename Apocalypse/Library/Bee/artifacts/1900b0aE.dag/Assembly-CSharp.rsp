@@ -383,10 +383,13 @@
 "Assets/AnimalMove.cs"
 "Assets/AnimalSpawnManager.cs"
 "Assets/CameraSize.cs"
+"Assets/GameManager.cs"
 "Assets/GridManager.cs"
+"Assets/InfoButton.cs"
 "Assets/Menu.cs"
 "Assets/MouseV.cs"
 "Assets/OnSpawnTile.cs"
+"Assets/StartButton.cs"
 "Assets/Tile.cs"
 "Assets/Turn.cs"
 -langversion:9.0

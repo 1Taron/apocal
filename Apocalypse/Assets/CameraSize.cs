@@ -74,7 +74,7 @@ public class CameraSize : MonoBehaviour
     {
         if (C.orthographicSize <= 14.0f)
         {
-            if (MousePosition.x > 2000)
+            if (MousePosition.x > 1900)
             {
 
                 transform.position = Vector3.Lerp(transform.position, AssXT.position, Time.deltaTime * 0.035f);
@@ -82,7 +82,7 @@ public class CameraSize : MonoBehaviour
                 float clampy = Mathf.Clamp(Camera.main.transform.position.y, 5, 20);
                 transform.position = new Vector3(clampx, clampy, -10f);
             }
-            else if (MousePosition.x < 0)
+            else if (MousePosition.x < 20)
             {
 
                 transform.position = Vector3.Lerp(transform.position, Ass_XT.position, Time.deltaTime * 0.035f);
@@ -90,7 +90,7 @@ public class CameraSize : MonoBehaviour
                 float clampy = Mathf.Clamp(Camera.main.transform.position.y, 5, 20);
                 transform.position = new Vector3(clampx, clampy, -10f);
             }
-            else if (MousePosition.y > 1100)
+            else if (MousePosition.y > 1060)
             {
 
                 transform.position = Vector3.Lerp(transform.position, AssYT.position, Time.deltaTime * 0.035f);
@@ -98,7 +98,7 @@ public class CameraSize : MonoBehaviour
                 float clampy = Mathf.Clamp(Camera.main.transform.position.y, 5, 20);
                 transform.position = new Vector3(clampx, clampy, -10f);
             }
-            else if (MousePosition.y < 0)
+            else if (MousePosition.y < 20)
             {
 
                 transform.position = Vector3.Lerp(transform.position, Ass_YT.position, Time.deltaTime * 0.035f);

@@ -11,7 +11,7 @@ public class Tile : MonoBehaviour
 
     public static Action tileA;
     public static Action tileB;
-    public static Action tileA2;
+    public static Action tileA2, tileSpawn1, tileSpawn2, tileSpawn3, tileSpawn4;
     public static Action tileGrass;
 
     private void Awake()
@@ -20,6 +20,10 @@ public class Tile : MonoBehaviour
         tileB = () => { ChangeBaseColor(); };
         tileA2 = () => { ChangeSpawnColorPlayer2(); };
         tileGrass = () => { GrassTileChange(); };
+        tileSpawn1 = () => { SpawnTileon1(); };
+        tileSpawn2 = () => { SpawnTileoff1(); };
+        tileSpawn3 = () => { SpawnTileon2(); };
+        tileSpawn4 = () => { SpawnTileoff2(); };
     }
 
     public void Init(int _colorValue)
@@ -102,6 +106,48 @@ public class Tile : MonoBehaviour
                 {
                     GameObject.Find($"Tile {x} {y}").GetComponent<SpriteRenderer>().sprite = _offsetsprite;
                 }
+            }
+        }
+    }
+
+    void SpawnTileon1()
+    {
+        for (float x = 41; x > 36; x--)
+        {
+            for (float y = 1; y < 6; y++)
+            {
+                GameObject.Find($"Tile {x} {y}").transform.Find("spawnhighlight").gameObject.SetActive(true);
+            }
+        }
+    }
+    void SpawnTileoff1()
+    {
+        for (float x = 41; x > 36; x--)
+        {
+            for (float y = 1; y < 6; y++)
+            {
+                GameObject.Find($"Tile {x} {y}").transform.Find("spawnhighlight").gameObject.SetActive(false);
+            }
+        }
+    }
+
+    void SpawnTileon2()
+    {
+        for (float x = 1; x < 6; x++)
+        {
+            for (float y = 27; y < 32; y++)
+            {
+                GameObject.Find($"Tile {x} {y}").transform.Find("spawnhighlight").gameObject.SetActive(true);
+            }
+        }
+    }
+    void SpawnTileoff2()
+    {
+        for (float x = 1; x < 6; x++)
+        {
+            for (float y = 27; y < 32; y++)
+            {
+                GameObject.Find($"Tile {x} {y}").transform.Find("spawnhighlight").gameObject.SetActive(false);
             }
         }
     }

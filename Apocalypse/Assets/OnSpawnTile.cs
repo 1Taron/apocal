@@ -28,7 +28,7 @@ public class OnSpawnTile : MonoBehaviour
             if (cost_ >= 0)
             {
                 GameObject.Find("AnimalCreate_pn").SetActive(false);
-                Tile.tileA();
+                Tile.tileA(); Tile.tileSpawn1();
             }
             else if (cost_ < 0)
             {
@@ -50,7 +50,7 @@ public class OnSpawnTile : MonoBehaviour
             if (cost_ >= 0)
             {
                 GameObject.Find("AnimalCreate_pn").SetActive(false);
-                Tile.tileA2();
+                Tile.tileA2(); Tile.tileSpawn3();
             }
             else if (cost_ < 0)
             {

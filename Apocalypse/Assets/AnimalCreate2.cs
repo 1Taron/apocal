@@ -126,68 +126,68 @@ public class AnimalCreate2 : MonoBehaviour
         {
             xpos = GameObject.Find(strtile).transform.position.x;
             ypos = GameObject.Find(strtile).transform.position.y;
-            Instantiate(Animal01, new Vector3(xpos, ypos, -2), Quaternion.identity);
+            Instantiate(Animal01, new Vector3(xpos, ypos, -2), Quaternion.identity); Tile.tileSpawn4();
             Tile.tileB(); AnimalSpawnManager.tileD();
         }
         else if (GameObject.Find(strtile).transform.Find("spawnable_gazelle").gameObject.activeSelf == true)
         {
             xpos = GameObject.Find(strtile).transform.position.x;
             ypos = GameObject.Find(strtile).transform.position.y;
-            _GazelleCreate(); Tile.tileB(); AnimalSpawnManager.tileD();
+            _GazelleCreate(); Tile.tileB(); AnimalSpawnManager.tileD(); Tile.tileSpawn4();
         }
         else if (GameObject.Find(strtile).transform.Find("spawnable_hyena").gameObject.activeSelf == true)
         {
             xpos = GameObject.Find(strtile).transform.position.x;
             ypos = GameObject.Find(strtile).transform.position.y;
-            _HyenaCreate(); Tile.tileB(); AnimalSpawnManager.tileD();
+            _HyenaCreate(); Tile.tileB(); AnimalSpawnManager.tileD(); Tile.tileSpawn4();
         }
         else if (GameObject.Find(strtile).transform.Find("spawnable_croco").gameObject.activeSelf == true)
         {
             xpos = GameObject.Find(strtile).transform.position.x;
             ypos = GameObject.Find(strtile).transform.position.y;
-            _CrocoCreate(); Tile.tileB(); AnimalSpawnManager.tileD();
+            _CrocoCreate(); Tile.tileB(); AnimalSpawnManager.tileD(); Tile.tileSpawn4();
         }
         else if (GameObject.Find(strtile).transform.Find("spawnable_cheetah").gameObject.activeSelf == true)
         {
             xpos = GameObject.Find(strtile).transform.position.x;
             ypos = GameObject.Find(strtile).transform.position.y;
-            _CheetahCreate(); Tile.tileB(); AnimalSpawnManager.tileD();
+            _CheetahCreate(); Tile.tileB(); AnimalSpawnManager.tileD(); Tile.tileSpawn4();
         }
         else if (GameObject.Find(strtile).transform.Find("spawnable_hippo").gameObject.activeSelf == true)
         {
             xpos = GameObject.Find(strtile).transform.position.x;
             ypos = GameObject.Find(strtile).transform.position.y;
-            _HippoCreate(); Tile.tileB(); AnimalSpawnManager.tileD();
+            _HippoCreate(); Tile.tileB(); AnimalSpawnManager.tileD(); Tile.tileSpawn4();
         }
         else if (GameObject.Find(strtile).transform.Find("spawnable_rhino").gameObject.activeSelf == true)
         {
             xpos = GameObject.Find(strtile).transform.position.x;
             ypos = GameObject.Find(strtile).transform.position.y;
-            _RhinoCreate(); Tile.tileB(); AnimalSpawnManager.tileD();
+            _RhinoCreate(); Tile.tileB(); AnimalSpawnManager.tileD(); Tile.tileSpawn4();
         }
         else if (GameObject.Find(strtile).transform.Find("spawnable_snake").gameObject.activeSelf == true)
         {
             xpos = GameObject.Find(strtile).transform.position.x;
             ypos = GameObject.Find(strtile).transform.position.y;
-            _SnakeCreate(); Tile.tileB(); AnimalSpawnManager.tileD();
+            _SnakeCreate(); Tile.tileB(); AnimalSpawnManager.tileD(); Tile.tileSpawn4();
         }
         else if (GameObject.Find(strtile).transform.Find("spawnable_lion").gameObject.activeSelf == true)
         {
             xpos = GameObject.Find(strtile).transform.position.x;
             ypos = GameObject.Find(strtile).transform.position.y;
-            _LionCreate(); Tile.tileB(); AnimalSpawnManager.tileD();
+            _LionCreate(); Tile.tileB(); AnimalSpawnManager.tileD(); Tile.tileSpawn4();
         }
         else if (GameObject.Find(strtile).transform.Find("spawnable_eagle").gameObject.activeSelf == true)
         {
             xpos = GameObject.Find(strtile).transform.position.x;
             ypos = GameObject.Find(strtile).transform.position.y;
-            _EagleCreate(); Tile.tileB(); AnimalSpawnManager.tileD();
+            _EagleCreate(); Tile.tileB(); AnimalSpawnManager.tileD(); Tile.tileSpawn4();
         }
         else if (GameObject.Find(strtile).transform.Find("spawnable_giraffe").gameObject.activeSelf == true)
         {
             xpos = GameObject.Find(strtile).transform.position.x;
             ypos = GameObject.Find(strtile).transform.position.y;
-            _GiraffeCreate(); Tile.tileB(); AnimalSpawnManager.tileD();
+            _GiraffeCreate(); Tile.tileB(); AnimalSpawnManager.tileD(); Tile.tileSpawn4();
         }
     }
 
