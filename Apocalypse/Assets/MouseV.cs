@@ -23,16 +23,16 @@ public class MouseV : MonoBehaviour
     int cost_2;
     string cost_;
     float maxHp = 10;
-    float maxHp2 = 10;
+    float maxHp2 = 2;
     float curHp = 10;
-    float curHp2 = 10;
+    float curHp2 = 2;
 
     void Start()
     {
         C = GameObject
             .Find("Main Camera")
             .GetComponent<Camera>();
-        Player1_MoveCost.text = "10";
+        Player1_MoveCost.text = "10";  
         Player2_MoveCost.text = "10";
 
     }

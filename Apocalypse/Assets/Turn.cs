@@ -37,7 +37,7 @@ public class Turn : MonoBehaviour
         Debug.Log("<color=white>Start()</color>" + player1_turn);
         Player02.SetActive(false);
         Info();
-        cost1.text = "1000";
+        cost1.text = "10";
         cost2.text = "10";
     }
 
@@ -49,7 +49,7 @@ public class Turn : MonoBehaviour
     public void OnClickEndTurn()
     {
         TurnChanged(player1_turn);
-        Player1_MoveCost.text = "100";
+        Player1_MoveCost.text = "10";
         Player2_MoveCost.text = "10";
     }
 
